@@ -1637,6 +1637,317 @@
     }
     /* ===== GLOW CARD on .cyan-hover ===== */
     .article-card:hover.cyan-hover { border-color: rgba(124,58,237,0.3); }
+
+    /* ===== PTM26 LIVE BANNER ===== */
+    @keyframes ptm-border-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,229,255,0), 0 0 30px rgba(0,229,255,0.15), 0 0 80px rgba(245,166,35,0.1), inset 0 0 40px rgba(0,0,0,0.5); border-color: rgba(0,229,255,0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(0,229,255,0.06), 0 0 60px rgba(0,229,255,0.35), 0 0 120px rgba(245,166,35,0.2), inset 0 0 40px rgba(0,0,0,0.5); border-color: rgba(245,166,35,0.7); }
+    }
+    @keyframes ptm-live-blink {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px #ff4757, 0 0 20px rgba(255,71,87,0.6); }
+      50% { opacity: 0.5; box-shadow: 0 0 4px #ff4757; }
+    }
+    @keyframes ptm-scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(400%); }
+    }
+    @keyframes ptm-shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes ptm-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes ptm-corner-spin {
+      0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; }
+    }
+    @keyframes ptm-play-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(245,166,35,0.4), 0 4px 20px rgba(245,166,35,0.3); }
+      50% { box-shadow: 0 0 40px rgba(245,166,35,0.8), 0 8px 40px rgba(245,166,35,0.5), 0 0 80px rgba(0,229,255,0.2); }
+    }
+
+    .ptm26-section {
+      margin: 0 0 8px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .ptm26-wrapper {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(0,229,255,0.5);
+      animation: ptm-border-pulse 2.8s ease-in-out infinite;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .ptm26-wrapper:hover { animation: none; border-color: var(--gold); box-shadow: 0 0 80px rgba(245,166,35,0.5), 0 0 30px rgba(0,229,255,0.3), inset 0 0 60px rgba(0,0,0,0.4); transform: scale(1.003); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s; }
+
+    /* 16:9 image container */
+    .ptm26-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #000;
+    }
+    .ptm26-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+      filter: brightness(0.88) saturate(1.1);
+    }
+    .ptm26-wrapper:hover .ptm26-image-wrap img { transform: scale(1.04); filter: brightness(1) saturate(1.2); }
+
+    /* Scanline sweep */
+    .ptm26-scan {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .ptm26-scan::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 25%;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,229,255,0.04) 50%, transparent 100%);
+      animation: ptm-scan 3.5s linear infinite;
+    }
+
+    /* Vignette + gradient overlay at bottom */
+    .ptm26-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 30%, rgba(4,4,10,0.7) 75%, rgba(4,4,10,0.97) 100%),
+        linear-gradient(90deg, rgba(4,4,10,0.6) 0%, transparent 40%, transparent 60%, rgba(4,4,10,0.4) 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Corner decorations */
+    .ptm26-corner {
+      position: absolute;
+      width: 28px; height: 28px;
+      z-index: 4;
+      pointer-events: none;
+      animation: ptm-corner-spin 2s ease-in-out infinite;
+    }
+    .ptm26-corner.tl { top: 14px; left: 14px; border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan); }
+    .ptm26-corner.tr { top: 14px; right: 14px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); animation-delay: 0.7s; }
+    .ptm26-corner.bl { bottom: 14px; left: 14px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold); animation-delay: 1.4s; }
+    .ptm26-corner.br { bottom: 14px; right: 14px; border-bottom: 2px solid var(--cyan); border-right: 2px solid var(--cyan); animation-delay: 2.1s; }
+
+    /* LIVE badge */
+    .ptm26-live-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(4,4,10,0.85);
+      border: 1px solid rgba(255,71,87,0.6);
+      border-radius: 100px;
+      padding: 5px 14px 5px 10px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .ptm26-live-dot {
+      width: 9px; height: 9px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: ptm-live-blink 1s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    /* NEW tag */
+    .ptm26-new-tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 5;
+      background: linear-gradient(135deg, var(--gold), #e08c00);
+      color: #000;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.55rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 14px rgba(245,166,35,0.6);
+    }
+
+    /* Bottom info overlay */
+    .ptm26-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 24px 22px;
+      z-index: 5;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .ptm26-text { flex: 1; min-width: 0; }
+    .ptm26-cat {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ptm26-cat::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+    .ptm26-title {
+      font-family: 'Orbitron', monospace;
+      font-weight: 900;
+      font-size: clamp(1rem, 3.5vw, 1.75rem);
+      line-height: 1.15;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+    .ptm26-title .ptm-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 12px rgba(245,166,35,0.5));
+    }
+    .ptm26-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(0.75rem, 1.8vw, 0.88rem);
+      color: rgba(232,232,245,0.65);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .ptm26-play-btn {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), #e08c00);
+      color: #000;
+      font-family: 'Orbitron', monospace;
+      font-weight: 900;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      animation: ptm-play-glow 2s ease-in-out infinite;
+      white-space: nowrap;
+      transition: transform 0.2s, filter 0.2s;
+    }
+    .ptm26-wrapper:hover .ptm26-play-btn {
+      transform: scale(1.06) translateY(-2px);
+      filter: brightness(1.1);
+      animation: none;
+      box-shadow: 0 0 50px rgba(245,166,35,0.8), 0 8px 30px rgba(245,166,35,0.5);
+    }
+    .ptm26-play-icon {
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 7px 0 7px 13px;
+      border-color: transparent transparent transparent #000;
+      flex-shrink: 0;
+    }
+
+    /* Section label above the banner */
+    .ptm26-section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .ptm26-section-label h2 {
+      font-family: 'Orbitron', monospace;
+      font-weight: 900;
+      font-size: clamp(0.75rem, 2vw, 0.88rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .ptm26-section-label .ptm-badge {
+      background: linear-gradient(135deg, var(--red), #cc0015);
+      color: #fff;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.52rem;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px rgba(255,71,87,0.5);
+      animation: ptm-live-blink 1.5s ease-in-out infinite;
+    }
+    .ptm26-section-label .ptm-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(0,229,255,0.2), transparent);
+    }
+
+    /* Floating particles inside banner */
+    .ptm26-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .ptm26-particles span {
+      position: absolute;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: ptm-float-particle 4s ease-in-out infinite;
+    }
+    @keyframes ptm-float-particle {
+      0% { transform: translateY(100%); opacity: 0; }
+      20% { opacity: 0.7; }
+      80% { opacity: 0.4; }
+      100% { transform: translateY(-200px); opacity: 0; }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .ptm26-info { padding: 14px 14px 16px; gap: 10px; }
+      .ptm26-play-btn { padding: 9px 14px; font-size: 0.62rem; letter-spacing: 1px; }
+      .ptm26-corner { width: 18px; height: 18px; }
+      .ptm26-live-badge { font-size: 0.58rem; padding: 4px 10px 4px 8px; }
+    }
+    @media (max-width: 400px) {
+      .ptm26-info { flex-direction: column; align-items: flex-start; }
+      .ptm26-play-btn { width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 
@@ -1722,6 +2033,77 @@
       </section>
 
       <div class="neon-divider"></div>
+
+      <!-- ===== PTM 26 LIVE GAME BANNER ===== -->
+      <div class="ptm26-section section">
+        <div class="ptm26-section-label">
+          <h2>Featured Game</h2>
+          <span class="ptm-badge">● LIVE NOW</span>
+          <div class="ptm-line"></div>
+        </div>
+
+        <a href="https://lkssaske.github.io/ptm26_v88.html" target="_blank" class="ptm26-wrapper" rel="noopener">
+
+          <!-- Image -->
+          <div class="ptm26-image-wrap">
+            <img src="ptm26.png" alt="Part Time Manager 2026 - Play Live Football Management Game" loading="eager">
+          </div>
+
+          <!-- Scanline sweep -->
+          <div class="ptm26-scan"></div>
+
+          <!-- Gradient overlay -->
+          <div class="ptm26-overlay"></div>
+
+          <!-- Floating particles -->
+          <div class="ptm26-particles">
+            <span style="left:8%;background:var(--cyan);animation-delay:0s;animation-duration:5s"></span>
+            <span style="left:22%;background:var(--gold);animation-delay:1.2s;animation-duration:4.5s"></span>
+            <span style="left:38%;background:var(--cyan);animation-delay:0.6s;animation-duration:6s"></span>
+            <span style="left:55%;background:var(--gold2);animation-delay:2s;animation-duration:4s"></span>
+            <span style="left:72%;background:var(--cyan);animation-delay:1.8s;animation-duration:5.5s"></span>
+            <span style="left:88%;background:var(--gold);animation-delay:0.3s;animation-duration:4.8s"></span>
+          </div>
+
+          <!-- Corner accents -->
+          <div class="ptm26-corner tl"></div>
+          <div class="ptm26-corner tr"></div>
+          <div class="ptm26-corner bl"></div>
+          <div class="ptm26-corner br"></div>
+
+          <!-- NEW tag -->
+          <div class="ptm26-new-tag">⚽ NEW</div>
+
+          <!-- LIVE badge -->
+          <div class="ptm26-live-badge">
+            <div class="ptm26-live-dot"></div>
+            Live Game
+          </div>
+
+          <!-- Bottom info -->
+          <div class="ptm26-info">
+            <div class="ptm26-text">
+              <div class="ptm26-cat">Football Management · Browser Game</div>
+              <div class="ptm26-title">Part Time Manager <span class="ptm-gold">2026</span></div>
+              <div class="ptm26-sub">Build your squad &amp; rise to the top — play live right here on the site</div>
+            </div>
+            <div class="ptm26-play-btn">
+              <div class="ptm26-play-icon"></div>
+              Play Now
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+      <!-- ===== AD - AFTER PTM26 ===== -->
+      <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrapper">
+          <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+          <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+        </div>
+      </div>
 
       <!-- ===== AD - TOP BANNER ===== -->
       <div class="ad-container">
@@ -2301,7 +2683,7 @@
         requestAnimationFrame(moveCursorOuter);
       }
       moveCursorOuter();
-      document.querySelectorAll('a, button, .cat-pill').forEach(el => {
+      document.querySelectorAll('a, button, .cat-pill, .ptm26-wrapper').forEach(el => {
         el.addEventListener('mouseenter', () => cursorOuter.classList.add('hover'));
         el.addEventListener('mouseleave', () => cursorOuter.classList.remove('hover'));
       });
