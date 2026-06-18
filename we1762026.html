@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- ====================================================
+       SLOT 1 · META  — change for every page
+       ==================================================== -->
+  <meta name="description" content="winning eleven 2026">
+  <title>BARU!!! WINNING ELEVEN 2012 MOD 2026| NEW UPDATE FULL TRANSFERS & KITS 2026/27| GRAFIK HD OFFLINE| LKS SASKE</title>
+  <!-- ==================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --bg: #fbf8ff;
+      --surface: #ffffff;
+      --card: #ffffff;
+      --card2: #f6f0ff;
+      --border: rgba(91,33,182,0.13);
+      --purple: #6d28d9;
+      --purple2: #8b5cf6;
+      --cyan: #06b6d4;
+      --red: #e11d48;
+      --text: #17102a;
+      --muted: #6f6682;
+      --nav-h: 68px;
+      --r: 8px;
+      --shadow: 0 12px 34px rgba(37,20,70,0.10);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(180deg, #fff 0%, #fbf8ff 40%, #f3edff 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(124,58,237,0.07), transparent 34%),
+        linear-gradient(260deg, rgba(6,182,212,0.07), transparent 32%);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #f4efff; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--purple), var(--cyan)); border-radius: 4px; }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0;
+      height: 4px; width: 0%;
+      background: linear-gradient(90deg, #6d28d9, #a855f7, #06b6d4);
+      z-index: 9999; transition: width 0.1s linear;
+      box-shadow: 0 0 14px rgba(124,58,237,0.4);
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 4px; left: 12px; right: 12px;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(124,58,237,0.14);
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 14px 44px rgba(76,29,149,0.10);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(14px, 3vw, 28px);
+      z-index: 1000; transition: box-shadow 0.3s;
+    }
+    .navbar::before {
+      content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.4), transparent);
+    }
+    .navbar.scrolled { box-shadow: 0 16px 52px rgba(76,29,149,0.15); }
+
+    .nav-logo {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(0.85rem, 3.5vw, 1.15rem);
+      background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 48%, #06b6d4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem;
+      padding: 7px 14px; border-radius: 999px; color: #625675;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #5b21b6; background: #f1e8ff; }
+
+    .nav-search {
+      display: flex; align-items: center;
+      background: #f8f5ff; border: 1px solid rgba(124,58,237,0.16);
+      border-radius: 999px; overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .nav-search:focus-within { border-color: rgba(109,40,217,0.5); box-shadow: 0 0 0 2px rgba(109,40,217,0.08); }
+    .nav-search input {
+      background: none; border: none; outline: none;
+      padding: 7px 12px; color: var(--text);
+      font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; width: 140px;
+    }
+    .nav-search input::placeholder { color: var(--muted); }
+    .nav-search button {
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      border: none; cursor: pointer; padding: 7px 14px;
+      color: #fff; font-weight: 700; font-size: 0.75rem;
+      font-family: 'Orbitron', monospace; letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+    .nav-search button:hover { opacity: 0.85; }
+
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      border-radius: 8px; border: 1px solid rgba(124,58,237,0.18);
+      width: 42px; height: 42px; flex-shrink: 0; background: #f3eaff;
+    }
+    .hamburger span {
+      display: block; width: 100%; height: 2px; background: #6d28d9;
+      border-radius: 2px;
+      transition: all 0.35s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed; top: calc(var(--nav-h) + 12px); left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(124,58,237,0.14);
+      box-shadow: 0 18px 48px rgba(91,33,182,0.12);
+      padding: 16px; z-index: 999;
+      flex-direction: column; gap: 4px;
+      transform: translateY(-110%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+    }
+    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu a {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
+      padding: 12px 16px; border-radius: 8px; color: #312147;
+      background: #f8f5ff; border: 1px solid rgba(124,58,237,0.12);
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-menu a:hover { color: #5b21b6; background: #ede3ff; }
+    .mobile-search {
+      display: flex; margin-top: 8px;
+      border: 1px solid rgba(124,58,237,0.14); border-radius: 8px;
+      overflow: hidden; background: #f8f5ff;
+    }
+    .mobile-search input {
+      flex: 1; background: none; border: none; outline: none;
+      padding: 11px 14px; color: var(--text);
+      font-family: 'Rajdhani', sans-serif; font-size: 0.95rem;
+    }
+    .mobile-search button {
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      border: none; cursor: pointer; padding: 11px 18px;
+      color: #fff; font-weight: 700; font-size: 0.85rem;
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* ── MAIN ── */
+    main { padding-top: calc(var(--nav-h) + 28px); position: relative; z-index: 2; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 28px); }
+
+    /* ── AD BLOCKS ── */
+    .ad-block {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 5px; margin: 28px auto;
+    }
+    .ad-label {
+      font-size: 0.55rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 3px;
+      font-family: 'Orbitron', monospace;
+    }
+    .ad-wrap {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 8px;
+      min-height: 66px; width: 100%; max-width: 340px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      font-size: 0.68rem; font-family: 'Orbitron', monospace;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--muted); padding: clamp(20px,4vw,40px) 0 20px;
+    }
+    .breadcrumb a { color: var(--purple); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--cyan); }
+    .breadcrumb .sep { opacity: 0.35; }
+
+    /* ── PAGE LAYOUT: content + sidebar ── */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .page-layout { grid-template-columns: 1fr; } }
+
+    /* ════════════════════════════════════════════════════
+       SLOT 2 · PAGE TITLE
+       ════════════════════════════════════════════════════ */
+    .page-title-wrap { margin-bottom: 24px; }
+
+    .page-cat {
+      display: inline-block;
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px;
+      padding: 4px 14px; border-radius: 999px;
+      margin-bottom: 12px;
+      /* colour options — pick one and delete the rest:
+         background:#ede3ff; color:#5b21b6;   ← purple (PPSSPP / general)
+         background:#dcf7ff; color:#0e7490;   ← cyan   (Football)
+         background:#ffe4ec; color:#be123c;   ← red    (Tutorial)
+         background:#fef3c7; color:#92400e;   ← gold   (Guide)
+         background:#d1fae5; color:#065f46;   ← green  (Tech / Tips) */
+      background: #ede3ff; color: #5b21b6;
+    }
+
+    .page-title-wrap h1 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2.4rem); line-height: 1.2;
+      color: #160b2e; letter-spacing: -0.3px; margin-bottom: 12px;
+    }
+
+    .page-desc {
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+      color: var(--muted); line-height: 1.7; margin-bottom: 14px;
+    }
+
+    .page-meta {
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+      font-size: 0.7rem; font-family: 'Share Tech Mono', monospace; color: var(--muted);
+    }
+    /* ════════════════════════════════════════════════════ */
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px; background: linear-gradient(90deg, rgba(124,58,237,0.18), transparent);
+      margin: 24px 0;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SLOT 3 · COVER IMAGE
+       ════════════════════════════════════════════════════ */
+    .cover-img {
+      width: 100%; border-radius: var(--r);
+      overflow: hidden; border: 1px solid var(--border);
+      box-shadow: var(--shadow); margin-bottom: 32px;
+    }
+    .cover-img img {
+      width: 100%; aspect-ratio: 16/8; object-fit: cover; display: block;
+    }
+    /* ════════════════════════════════════════════════════ */
+
+    /* ════════════════════════════════════════════════════
+       SLOT 4 · ARTICLE CONTENT
+       Use h2, h3, p, ul, ol, img, blockquote freely.
+       ════════════════════════════════════════════════════ */
+    .article-body {
+      font-size: clamp(1rem, 2vw, 1.08rem);
+      line-height: 1.82; color: #2d1f45;
+    }
+    .article-body h2 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(0.95rem, 2.2vw, 1.2rem); color: #160b2e;
+      margin: 36px 0 12px; padding-left: 12px;
+      border-left: 3px solid var(--purple); line-height: 1.35;
+    }
+    .article-body h3 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.1rem); color: #2d1f45;
+      margin: 24px 0 10px;
+    }
+    .article-body p { margin-bottom: 18px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 18px; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body img {
+      width: 100%; border-radius: var(--r);
+      border: 1px solid var(--border); margin: 24px 0;
+      box-shadow: var(--shadow);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--purple); background: #f8f5ff;
+      padding: 14px 20px; border-radius: 0 var(--r) var(--r) 0;
+      color: var(--purple); font-style: italic;
+      margin: 24px 0; font-size: 1.04em;
+    }
+    .article-body a { color: var(--purple); text-decoration: underline; transition: color 0.2s; }
+    .article-body a:hover { color: var(--cyan); }
+
+    /* Download button inside content */
+    .btn-dl {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      color: #fff; font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; font-size: 1.05rem;
+      padding: 14px 30px; border-radius: 999px; margin: 20px 0;
+      box-shadow: 0 10px 26px rgba(109,40,217,0.24);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn-dl:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(109,40,217,0.36); color: #fff; }
+    /* ════════════════════════════════════════════════════ */
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 22px; }
+    .sidebar-sticky { position: sticky; top: calc(var(--nav-h) + 18px); display: flex; flex-direction: column; gap: 22px; }
+
+    /* Info box */
+    .info-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 18px; box-shadow: var(--shadow);
+    }
+    .info-box-title {
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--purple); margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(91,33,182,0.06);
+      font-size: 0.84rem;
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row .lbl { color: var(--muted); font-weight: 600; white-space: nowrap; }
+    .info-row .val { font-weight: 700; color: var(--text); text-align: right; }
+
+    /* Tags */
+    .tags-wrap { }
+    .tags-title {
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 5px 13px; border-radius: 999px;
+      border: 1px solid var(--border); font-size: 0.65rem;
+      font-weight: 700; font-family: 'Orbitron', monospace;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--muted); background: #f8f5ff;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .tag:hover { background: #ede3ff; border-color: var(--purple); color: var(--purple); }
+
+    /* ════════════════════════════════════════════════════
+       SLOT 5 · EXPLORE MORE
+       ════════════════════════════════════════════════════ */
+    .explore-section { padding: 48px 0 24px; }
+    .sec-head {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    }
+    .sec-head h2 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 900;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem); color: #160b2e; white-space: nowrap;
+    }
+    .sec-badge {
+      font-family: 'Orbitron', monospace; font-size: 0.52rem;
+      font-weight: 700; padding: 3px 10px; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 1px;
+      background: #ede3ff; color: #5b21b6;
+    }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(124,58,237,0.18), transparent); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 540px) { .cards-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(124,58,237,0.28); }
+    .card .thumb { overflow: hidden; }
+    .card .thumb img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform 0.5s; }
+    .card:hover .thumb img { transform: scale(1.06); }
+    .card .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+    .card-cat {
+      font-size: 0.58rem; font-weight: 700; font-family: 'Orbitron', monospace;
+      color: var(--purple); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 7px;
+    }
+    .card-cat.cyan { color: var(--cyan); }
+    .card-cat.red  { color: var(--red); }
+    .card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.95rem; line-height: 1.4; color: var(--text); flex: 1; margin-bottom: 10px; }
+    .read-more {
+      font-size: 0.65rem; font-weight: 700; font-family: 'Orbitron', monospace;
+      color: var(--purple); text-transform: uppercase; letter-spacing: 1px;
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .read-more::after { content: '>'; }
+    .read-more:hover { gap: 9px; color: var(--cyan); }
+    /* ════════════════════════════════════════════════════ */
+
+    /* ── SOCIAL BAR ── */
+    .social-bar {
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(237,227,255,0.7));
+      border: 1px solid rgba(124,58,237,0.15); border-radius: 18px;
+      padding: 32px 24px; text-align: center; margin: 32px 0;
+      position: relative; overflow: hidden;
+    }
+    .social-bar::before {
+      content: ''; position: absolute; top: -1px; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.5), transparent);
+    }
+    .social-bar h2 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(0.8rem, 3vw, 0.95rem); text-transform: uppercase;
+      letter-spacing: 3px; margin-bottom: 6px;
+      background: linear-gradient(135deg, #4c1d95, #8b5cf6 55%, #06b6d4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .social-bar p { color: var(--muted); font-size: 0.86rem; margin-bottom: 22px; }
+    .social-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .social-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--card);
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.85rem;
+      color: var(--text); text-transform: uppercase; letter-spacing: 1px;
+      transition: all 0.25s;
+    }
+    .social-btn:hover { transform: translateY(-3px); }
+    .social-btn.yt:hover { background: rgba(255,0,0,0.07); color: #e00; border-color: rgba(255,0,0,0.35); }
+    .social-btn.fb:hover { background: rgba(24,119,242,0.07); color: #1877f2; border-color: rgba(24,119,242,0.35); }
+    .social-btn.ig:hover { background: rgba(225,48,108,0.07); color: #e1306c; border-color: rgba(225,48,108,0.35); }
+    .social-btn.wa:hover { background: rgba(37,211,102,0.07); color: #25d366; border-color: rgba(37,211,102,0.35); }
+    .social-btn.tg:hover { background: rgba(0,136,204,0.07); color: #0088cc; border-color: rgba(0,136,204,0.35); }
+    .social-btn.dc:hover { background: rgba(88,101,242,0.07); color: #5865f2; border-color: rgba(88,101,242,0.35); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 40px 20px 24px; text-align: center; margin-top: 60px;
+      position: relative; z-index: 2;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.4), transparent);
+    }
+    .footer-logo {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 48%, #06b6d4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px; letter-spacing: 2px;
+    }
+    .footer-tagline { color: var(--muted); font-size: 0.82rem; margin-bottom: 24px; line-height: 1.6; }
+    .footer-links { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a {
+      font-family: 'Orbitron', monospace; font-weight: 700; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--muted);
+      padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .footer-links a:hover { color: var(--purple); border-color: rgba(124,58,237,0.4); background: #ede3ff; }
+    .footer-copy {
+      font-size: 0.75rem; color: var(--muted);
+      border-top: 1px solid var(--border); padding-top: 20px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed; bottom: 24px; right: 20px;
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      color: #fff; border-radius: 10px; border: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 900; cursor: pointer;
+      font-family: 'Orbitron', monospace; z-index: 999;
+      opacity: 0; transform: translateY(20px) scale(0.8);
+      transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(109,40,217,0.3);
+    }
+    .back-top.show { opacity: 1; transform: translateY(0) scale(1); }
+    .back-top:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 28px rgba(109,40,217,0.5); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-search { display: none; }
+      .hamburger { display: flex; }
+      .social-grid { display: grid; grid-template-columns: 1fr 1fr; }
+      .social-btn { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 12px; }
+      .ad-wrap { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR — shared, do not edit
+       ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">LKS SASKE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank">YouTube</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank">Contact</a></li>
+      <li><a href="PRIVACY POLICY .html">Privacy</a></li>
+    </ul>
+    <form class="nav-search" action="SEARCH SASKE.html" method="get">
+      <input type="text" name="query" placeholder="Search...">
+      <button type="submit">GO</button>
+    </form>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="About.html">About Us</a>
+    <a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank">Contact Us</a>
+    <a href="PRIVACY POLICY .html">Privacy Policy</a>
+    <form class="mobile-search" action="SEARCH SASKE.html" method="get">
+      <input type="text" name="query" placeholder="Search articles...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+
+  <main>
+    <div class="container">
+
+
+      <!-- ★ AD SLOT 1 — TOP (loads before content, high visibility) -->
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrap">
+          <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+          <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════
+           SLOT 2 · BREADCRUMB + PAGE TITLE
+           ════════════════════════════════════════════════════ -->
+      <div class="breadcrumb fade-up">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="index.html">HOME</a>
+        <!-- e.g. href="index.html#sec-ppsspp" → PPSSPP Games -->
+        <span class="sep">/</span>
+        <span>winning eleven 2012 mod 2026</span>
+      </div>
+
+      <div class="page-title-wrap fade-up">
+        <div class="page-cat">winning eleven</div>
+        <!-- pick a colour for .page-cat in the style block above -->
+
+        <h1>BARU!!! WINNING ELEVEN 2012 MOD 2026| NEW UPDATE FULL TRANSFERS & KITS 2026/27| GRAFIK HD OFFLINE</h1>
+
+        <p class="page-desc">
+         winning eleven 2012 moded 2026 update for indonesia </p>
+
+        <div class="page-meta">
+          <span>📅June 18, 2026</span>
+          <span>✍️ LKS SASKE</span>
+          <span>⏱5 min read</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <!-- ════════════════════════════════════════════════════ -->
+
+
+      <div class="page-layout">
+
+        <!-- LEFT: article -->
+        <div>
+
+          <!-- ════════════════════════════════════════════════
+               SLOT 3 · COVER IMAGE
+               ════════════════════════════════════════════════ -->
+          <div class="cover-img">
+            <img src="file_00000000df5c71f49a5893d613601401.png" alt="✏️ REPLACE: describe image" loading="eager">
+          </div>
+          <!-- ════════════════════════════════════════════════ -->
+
+
+          <!-- ════════════════════════════════════════════════
+               SLOT 4 · ARTICLE CONTENT
+               Write everything between these comments.
+               Available: h2, h3, p, ul, ol, img, blockquote, .btn-dl
+               ════════════════════════════════════════════════ -->
+          <article class="article-body">
+
+            <h2>2026 UPDATED FEATURES</h2>
+            <p>GET THE UPDATED NEW FEATUERES</p>
+            <p>NEW TEAM UPDATES AND SQUAD UPDATES</p>
+
+            <!-- inline image: duplicate as many times as you need -->
+            <img src="Screenshot_20260618_182012_Files by Google.jpg" alt="✏️ REPLACE: describe image">
+
+            <h2>MULTIPLE LEAGUES ACROSS ALL CONTINENTS</h2>
+            <p>Multiple leaguea updated with different teams</p>
+
+            <h3>2026 new kits updated</h3>
+            <ul>
+              <li>New Logos</li>
+              <li>New Kits</li>
+              <li>New Leagues</li>
+            </ul>
+
+            <blockquote>Not all team are necesarily updated some teams may have messed up updates, the update is mainly an Indonesia Update.</blockquote>
+
+            <!-- ★ AD SLOT 2 — MID CONTENT (between sections, natural break) -->
+            <div class="ad-block" style="margin:32px 0;">
+              <div class="ad-label">Advertisement</div>
+              <div class="ad-wrap">
+                <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+                <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+              </div>
+            </div>
+
+            <h2>MULTIPLE LEAGUES</h2>
+            <p>Play Multiple leagues and cup competitions</p>
+
+            <img src="Screenshot_20260618_182031_Files by Google.jpg" alt="✏️ REPLACE: describe image">
+
+            <h2>DOWNLOAD</h2>
+            <p>Please note the download redirects to Apis Game so basixally the download prkcess is on that page</p>
+
+            <br>  credits: Apis Game <br>
+            <!-- download / CTA button -->
+            <a href="https://hafizzikripratomo.blogspot.com/2026/04/baru-winning-eleven-2012-mod-2026-new.html?m=1" class="btn-dl" target="_blank" rel="noopener">⬇ Download Now</a>
+
+          </article>
+          <!-- ════════════════════════════════════════════════ -->
+
+
+          <!-- ★ AD SLOT 3 — AFTER CONTENT (catches readers at end of article) -->
+          <div class="ad-block" style="margin-top:36px;">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-wrap">
+              <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+              <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+            </div>
+          </div>
+
+        </div>
+        <!-- END LEFT -->
+
+
+        <!-- RIGHT: sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-sticky">
+
+            <!-- ★ AD SLOT 4 — SIDEBAR (visible whole time while reading) -->
+            <div class="ad-block" style="margin:0;">
+              <div class="ad-label">Advertisement</div>
+              <div class="ad-wrap">
+                <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+                <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+              </div>
+            </div>
+
+            <!-- INFO BOX — fill in details for this page -->
+            <div class="info-box">
+              <div class="info-box-title">Quick Info</div>
+              <div class="info-row"><span class="lbl">Version</span><span class="val"> v1.0</span></div>
+              <div class="info-row"><span class="lbl">Platform</span><span class="val">ANDROID</span></div>
+              <div class="info-row"><span class="lbl">Size</span><span class="val">200 MB</span></div>
+              <div class="info-row"><span class="lbl">Updated</span><span class="val">18 June 2026</span></div>
+              <!-- add or remove rows as needed -->
+            </div>
+
+            <!-- TAGS — change to match this page -->
+            <div class="tags-wrap">
+              <div class="tags-title">Tags</div>
+              <div class="tags">
+                <span class="tag">Android</span>
+                <span class="tag">Sports</span>
+                <span class="tag">Simulation</span>
+                <span class="tag">Mobile</span>
+                <!-- add more tags as needed -->
+              </div>
+            </div>
+
+          </div>
+        </aside>
+        <!-- END SIDEBAR -->
+
+      </div><!-- end .page-layout -->
+
+
+      <!-- ════════════════════════════════════════════════════
+           SLOT 5 · EXPLORE MORE — related posts
+           Copy a .card block for each related article (3–6 cards).
+           ════════════════════════════════════════════════════ -->
+      <div class="explore-section">
+        <div class="sec-head">
+          <h2>Explore More</h2>
+          <span class="sec-badge">Related</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- RELATED CARD — duplicate this block for each card -->
+          <a href="https://lkssaske.github.io/efootball%20ppsspp(Copy)(Copy).html" class="card">
+            <div class="thumb">
+              <img src="1781167116506.jpg" alt="✏️ REPLACE: Card 1 image description" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat">ppsspp</div>
+              <!-- card-cat colour classes: default=purple  .cyan  .red -->
+              <h3>PES PPSSPP 2026 UPDATES</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a href="https://lkssaske47-creator.github.io" class="card">
+            <div class="thumb">
+              <img src="file_000000009a787246908c5afd984c1ccf.png" alt="✏️ REPLACE: Card 2 image description" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat cyan">saske2</div>
+              <h3>MORE GAMES AND TUTORIALS</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a href="https://www.mediafire.com/file/f7ffccf5aagqebl/LKS_SASKE%25282%2529.apk/file" class="card">
+            <div class="thumb">
+              <img src="file_000000005d0c71f4b9cd9cdd452b0d72.png" alt="✏️ REPLACE: Card 3 image description" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat red">APPS</div>
+              <h3>LKS SASKE APP</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+          <!-- ADD MORE CARDS HERE — copy any card block above -->
+
+        </div>
+      </div>
+      <!-- ════════════════════════════════════════════════════ -->
+
+
+      <!-- ★ AD SLOT 5 — BEFORE SOCIAL (high scroll-depth, engaged readers) -->
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrap">
+          <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+          <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+        </div>
+      </div>
+
+
+      <!-- SOCIAL — shared, do not edit -->
+      <div class="social-bar">
+        <h2>Follow Us On</h2>
+        <p>Stay updated with the latest game mods, tutorials and guides</p>
+        <div class="social-grid">
+          <a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank" class="social-btn yt">YouTube</a>
+          <a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank" class="social-btn fb">Facebook</a>
+          <a href="https://instagram.com/lks_saske?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="social-btn ig">Instagram</a>
+          <a href="https://whatsapp.com/channel/0029Va9GzxJ6hENubPO66X3X" target="_blank" class="social-btn wa">WhatsApp</a>
+          <a href="https://t.me/lkssaske" target="_blank" class="social-btn tg">Telegram</a>
+          <a href="https://discord.com/invite/aWNg7Tf4" target="_blank" class="social-btn dc">Discord</a>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </main>
+
+
+  <!-- FOOTER — shared, do not edit -->
+  <footer>
+    <div class="footer-logo">LKS SASKE</div>
+    <div class="footer-tagline">Your #1 Gaming &amp; Tech Hub — PPSSPP Mods, Football Games, Tutorials &amp; Guides</div>
+    <div class="footer-links">
+      <a href="PRIVACY POLICY .html">Privacy Policy</a>
+      <a href="DISCLAIMER .html">Disclaimer</a>
+      <a href="About.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="SEARCH SASKE.html">Search</a>
+    </div>
+    <div class="footer-copy">&copy; 2024 LKS SASKE. All rights reserved. // BUILT FOR GAMERS</div>
+  </footer>
+
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">▲</button>
+
+
+  <script>
+    // Image fallback
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        if (!this.dataset.err) {
+          this.dataset.err = '1';
+          this.src = 'a69e1a13-3318-43fe-8d01-f2c0499fc12f.jpg';
+        }
+      }, { once: true });
+    });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+      bar.style.width = pct + '%';
+    });
+
+    // Navbar + back-to-top
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+      document.getElementById('backTop').classList.toggle('show', window.scrollY > 60);
+    });
+
+    // Hamburger
+    function toggleMenu() {
+      const m = document.getElementById('mobileMenu');
+      const h = document.getElementById('hamburger');
+      const open = m.classList.toggle('open');
+      h.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    document.addEventListener('click', e => {
+      const m = document.getElementById('mobileMenu');
+      const h = document.getElementById('hamburger');
+      if (m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) {
+        m.classList.remove('open'); h.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+
+    // Card reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0) scale(1)';
+        }, (i % 6) * 80);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.opacity = '0';
+      c.style.transform = 'translateY(22px) scale(0.97)';
+      c.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s, border-color 0.3s';
+      obs.observe(c);
+    });
+
+    // Active nav link
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  </script>
+
+</body>
+</html>
