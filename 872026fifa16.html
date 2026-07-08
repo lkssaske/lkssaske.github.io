@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- ====================================================
+       SLOT 1 · META
+       ==================================================== -->
+  <meta name="description" content="Download FIFA 16 Mod for Android 15+. Full APK + OBB data file, updated kits, HD graphics. Step-by-step install guide included.">
+  <title>FIFA 16 Mod APK + OBB | Android 15+ Download 2026 | LKS SASKE</title>
+  <!-- ==================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --bg: #fbf8ff;
+      --surface: #ffffff;
+      --card: #ffffff;
+      --card2: #f6f0ff;
+      --border: rgba(91,33,182,0.13);
+      --purple: #6d28d9;
+      --purple2: #8b5cf6;
+      --cyan: #06b6d4;
+      --red: #e11d48;
+      --text: #17102a;
+      --muted: #6f6682;
+      --nav-h: 68px;
+      --r: 8px;
+      --shadow: 0 12px 34px rgba(37,20,70,0.10);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(180deg, #fff 0%, #fbf8ff 40%, #f3edff 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(124,58,237,0.07), transparent 34%),
+        linear-gradient(260deg, rgba(6,182,212,0.07), transparent 32%);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #f4efff; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--purple), var(--cyan)); border-radius: 4px; }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0;
+      height: 4px; width: 0%;
+      background: linear-gradient(90deg, #6d28d9, #a855f7, #06b6d4);
+      z-index: 9999; transition: width 0.1s linear;
+      box-shadow: 0 0 14px rgba(124,58,237,0.4);
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 4px; left: 12px; right: 12px;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(124,58,237,0.14);
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 14px 44px rgba(76,29,149,0.10);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(14px, 3vw, 28px);
+      z-index: 1000; transition: box-shadow 0.3s;
+    }
+    .navbar::before {
+      content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.4), transparent);
+    }
+    .navbar.scrolled { box-shadow: 0 16px 52px rgba(76,29,149,0.15); }
+
+    .nav-logo {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(0.85rem, 3.5vw, 1.15rem);
+      background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 48%, #06b6d4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem;
+      padding: 7px 14px; border-radius: 999px; color: #625675;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #5b21b6; background: #f1e8ff; }
+
+    .nav-search {
+      display: flex; align-items: center;
+      background: #f8f5ff; border: 1px solid rgba(124,58,237,0.16);
+      border-radius: 999px; overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .nav-search:focus-within { border-color: rgba(109,40,217,0.5); box-shadow: 0 0 0 2px rgba(109,40,217,0.08); }
+    .nav-search input {
+      background: none; border: none; outline: none;
+      padding: 7px 12px; color: var(--text);
+      font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; width: 140px;
+    }
+    .nav-search input::placeholder { color: var(--muted); }
+    .nav-search button {
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      border: none; cursor: pointer; padding: 7px 14px;
+      color: #fff; font-weight: 700; font-size: 0.75rem;
+      font-family: 'Orbitron', monospace; letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+    .nav-search button:hover { opacity: 0.85; }
+
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      border-radius: 8px; border: 1px solid rgba(124,58,237,0.18);
+      width: 42px; height: 42px; flex-shrink: 0; background: #f3eaff;
+    }
+    .hamburger span {
+      display: block; width: 100%; height: 2px; background: #6d28d9;
+      border-radius: 2px;
+      transition: all 0.35s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed; top: calc(var(--nav-h) + 12px); left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(124,58,237,0.14);
+      box-shadow: 0 18px 48px rgba(91,33,182,0.12);
+      padding: 16px; z-index: 999;
+      flex-direction: column; gap: 4px;
+      transform: translateY(-110%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+    }
+    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu a {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
+      padding: 12px 16px; border-radius: 8px; color: #312147;
+      background: #f8f5ff; border: 1px solid rgba(124,58,237,0.12);
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-menu a:hover { color: #5b21b6; background: #ede3ff; }
+    .mobile-search {
+      display: flex; margin-top: 8px;
+      border: 1px solid rgba(124,58,237,0.14); border-radius: 8px;
+      overflow: hidden; background: #f8f5ff;
+    }
+    .mobile-search input {
+      flex: 1; background: none; border: none; outline: none;
+      padding: 11px 14px; color: var(--text);
+      font-family: 'Rajdhani', sans-serif; font-size: 0.95rem;
+    }
+    .mobile-search button {
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      border: none; cursor: pointer; padding: 11px 18px;
+      color: #fff; font-weight: 700; font-size: 0.85rem;
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* ── MAIN ── */
+    main { padding-top: calc(var(--nav-h) + 28px); position: relative; z-index: 2; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 28px); }
+
+    /* ── AD BLOCKS ── */
+    .ad-block {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 5px; margin: 28px auto;
+    }
+    .ad-label {
+      font-size: 0.55rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 3px;
+      font-family: 'Orbitron', monospace;
+    }
+    .ad-wrap {
+      background: var(--card); border: 1px dashed var(--border);
+      border-radius: 10px; padding: 8px;
+      min-height: 66px; width: 100%; max-width: 340px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      color: var(--muted); font-size: 0.7rem; font-family: 'Share Tech Mono', monospace;
+      text-align: center;
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      font-size: 0.68rem; font-family: 'Orbitron', monospace;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--muted); padding: clamp(20px,4vw,40px) 0 20px;
+    }
+    .breadcrumb a { color: var(--purple); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--cyan); }
+    .breadcrumb .sep { opacity: 0.35; }
+
+    /* ── PAGE LAYOUT: content + sidebar ── */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .page-layout { grid-template-columns: 1fr; } }
+
+    .page-title-wrap { margin-bottom: 24px; }
+
+    .page-cat {
+      display: inline-block;
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px;
+      padding: 4px 14px; border-radius: 999px;
+      margin-bottom: 12px;
+      background: #dcf7ff; color: #0e7490;
+    }
+
+    .page-title-wrap h1 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2.4rem); line-height: 1.2;
+      color: #160b2e; letter-spacing: -0.3px; margin-bottom: 12px;
+    }
+
+    .page-desc {
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+      color: var(--muted); line-height: 1.7; margin-bottom: 14px;
+    }
+
+    .page-meta {
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+      font-size: 0.7rem; font-family: 'Share Tech Mono', monospace; color: var(--muted);
+    }
+
+    .divider {
+      height: 1px; background: linear-gradient(90deg, rgba(124,58,237,0.18), transparent);
+      margin: 24px 0;
+    }
+
+    .cover-img {
+      width: 100%; border-radius: var(--r);
+      overflow: hidden; border: 1px solid var(--border);
+      box-shadow: var(--shadow); margin-bottom: 32px;
+    }
+    .cover-img img {
+      width: 100%; aspect-ratio: 16/8; object-fit: cover; display: block;
+    }
+
+    .article-body {
+      font-size: clamp(1rem, 2vw, 1.08rem);
+      line-height: 1.82; color: #2d1f45;
+    }
+    .article-body h2 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(0.95rem, 2.2vw, 1.2rem); color: #160b2e;
+      margin: 36px 0 12px; padding-left: 12px;
+      border-left: 3px solid var(--purple); line-height: 1.35;
+    }
+    .article-body h3 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.1rem); color: #2d1f45;
+      margin: 24px 0 10px;
+    }
+    .article-body p { margin-bottom: 18px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 18px; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body img {
+      width: 100%; border-radius: var(--r);
+      border: 1px solid var(--border); margin: 24px 0;
+      box-shadow: var(--shadow);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--purple); background: #f8f5ff;
+      padding: 14px 20px; border-radius: 0 var(--r) var(--r) 0;
+      color: var(--purple); font-style: italic;
+      margin: 24px 0; font-size: 1.04em;
+    }
+    .article-body a { color: var(--purple); text-decoration: underline; transition: color 0.2s; }
+    .article-body a:hover { color: var(--cyan); }
+
+    /* Download buttons inside content */
+    .btn-dl {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      color: #fff; font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; font-size: 1.05rem;
+      padding: 14px 30px; border-radius: 999px; margin: 10px 10px 10px 0;
+      box-shadow: 0 10px 26px rgba(109,40,217,0.24);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn-dl:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(109,40,217,0.36); color: #fff; }
+    .btn-dl.obb { background: linear-gradient(135deg, #0e7490, #06b6d4); box-shadow: 0 10px 26px rgba(6,182,212,0.24); }
+    .btn-dl.obb:hover { box-shadow: 0 16px 36px rgba(6,182,212,0.36); }
+    .dl-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 20px 0; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 22px; }
+    .sidebar-sticky { position: sticky; top: calc(var(--nav-h) + 18px); display: flex; flex-direction: column; gap: 22px; }
+
+    .info-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 18px; box-shadow: var(--shadow);
+    }
+    .info-box-title {
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--purple); margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(91,33,182,0.06);
+      font-size: 0.84rem;
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row .lbl { color: var(--muted); font-weight: 600; white-space: nowrap; }
+    .info-row .val { font-weight: 700; color: var(--text); text-align: right; }
+
+    .tags-wrap { }
+    .tags-title {
+      font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 5px 13px; border-radius: 999px;
+      border: 1px solid var(--border); font-size: 0.65rem;
+      font-weight: 700; font-family: 'Orbitron', monospace;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--muted); background: #f8f5ff;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .tag:hover { background: #ede3ff; border-color: var(--purple); color: var(--purple); }
+
+    .explore-section { padding: 48px 0 24px; }
+    .sec-head {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    }
+    .sec-head h2 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 900;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem); color: #160b2e; white-space: nowrap;
+    }
+    .sec-badge {
+      font-family: 'Orbitron', monospace; font-size: 0.52rem;
+      font-weight: 700; padding: 3px 10px; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 1px;
+      background: #ede3ff; color: #5b21b6;
+    }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(124,58,237,0.18), transparent); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: block;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(76,29,149,0.16); border-color: rgba(124,58,237,0.3); }
+    .thumb { aspect-ratio: 16/9; overflow: hidden; background: var(--card2); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .card:hover .thumb img { transform: scale(1.06); }
+    .card-body { padding: 14px 16px 18px; }
+    .card-cat {
+      display: inline-block; font-family: 'Orbitron', monospace; font-weight: 700;
+      font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #5b21b6; margin-bottom: 8px;
+    }
+    .card-cat.cyan { color: #0e7490; }
+    .card-cat.red { color: #be123c; }
+    .card-body h3 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
+      color: #160b2e; line-height: 1.35; margin-bottom: 10px;
+    }
+    .read-more {
+      font-family: 'Orbitron', monospace; font-size: 0.62rem;
+      font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── SOCIAL ── */
+    .social-bar {
+      text-align: center; padding: 48px 0 32px;
+    }
+    .social-bar h2 {
+      font-family: 'Orbitron', monospace; font-weight: 900;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: #160b2e; margin-bottom: 8px;
+    }
+    .social-bar p { color: var(--muted); margin-bottom: 22px; font-size: 0.92rem; }
+    .social-grid {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    }
+    .social-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 999px; font-weight: 700;
+      font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s; min-width: 130px;
+    }
+    .social-btn:hover { transform: translateY(-2px); }
+    .yt { background: #ff0000; }
+    .fb { background: #1877f2; }
+    .ig { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
+    .wa { background: #25d366; }
+    .tg { background: #229ed9; }
+    .dc { background: #5865f2; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 40px 20px 60px;
+      border-top: 1px solid var(--border); margin-top: 20px;
+      position: relative; z-index: 2;
+    }
+    .footer-logo {
+      font-family: 'Orbitron', monospace; font-weight: 900; font-size: 1.1rem;
+      background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 48%, #06b6d4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .footer-tagline { color: var(--muted); font-size: 0.85rem; margin-bottom: 18px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 18px; }
+    .footer-links a { color: #625675; font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--purple); }
+    .footer-copy { color: var(--muted); font-size: 0.72rem; font-family: 'Share Tech Mono', monospace; }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed; bottom: 20px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #6d28d9, #9f67ff);
+      color: #fff; border: none; cursor: pointer;
+      font-size: 1.1rem; box-shadow: 0 10px 26px rgba(109,40,217,0.3);
+      opacity: 0; pointer-events: none; transform: translateY(10px);
+      transition: all 0.3s; z-index: 998;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+    @media (max-width: 860px) {
+      .nav-links, .nav-search { display: none; }
+      .hamburger { display: flex; }
+      .social-grid { display: grid; grid-template-columns: 1fr 1fr; }
+      .social-btn { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 12px; }
+      .ad-wrap { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR — shared, do not edit
+       ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">LKS SASKE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank">YouTube</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank">Contact</a></li>
+      <li><a href="PRIVACY POLICY .html">Privacy</a></li>
+    </ul>
+    <form class="nav-search" action="SEARCH SASKE.html" method="get">
+      <input type="text" name="query" placeholder="Search...">
+      <button type="submit">GO</button>
+    </form>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="About.html">About Us</a>
+    <a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank">Contact Us</a>
+    <a href="PRIVACY POLICY .html">Privacy Policy</a>
+    <form class="mobile-search" action="SEARCH SASKE.html" method="get">
+      <input type="text" name="query" placeholder="Search articles...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+
+  <main>
+    <div class="container">
+
+
+      <!-- ★ AD SLOT 1 — TOP · PASTE YOUR AD CODE INSIDE .ad-wrap BELOW -->
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrap">
+          <!-- ✏️ PASTE AD CODE HERE (AD SLOT 1 — TOP) -->
+          <script>
+  atOptions = {
+    'key' : '617a1d0f52818c4a8a34f0e15034dd21',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/617a1d0f52818c4a8a34f0e15034dd21/invoke.js"></script>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════════════════════
+           BREADCRUMB + PAGE TITLE
+           ════════════════════════════════════════════════════ -->
+      <div class="breadcrumb fade-up">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="index.html#sec-football">Football Games</a>
+        <span class="sep">/</span>
+        <span>FIFA 16 Mod Android</span>
+      </div>
+
+      <div class="page-title-wrap fade-up">
+        <div class="page-cat">Football Games</div>
+
+        <h1>FIFA 16 Mod APK + OBB Download — Android 15+ (2026 Update)</h1>
+
+        <p class="page-desc">
+          Get FIFA 16 running on modern Android 15+ devices with this updated mod package — full APK plus OBB data file, HD graphics, and offline gameplay.
+        </p>
+
+        <div class="page-meta">
+          <span>📅 July 8, 2026</span>
+          <span>✍️ LKS SASKE</span>
+          <span>⏱ 6 min read</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <!-- ════════════════════════════════════════════════════ -->
+
+
+      <div class="page-layout">
+
+        <!-- LEFT: article -->
+        <div>
+
+          <!-- COVER IMAGE -->
+          <div class="cover-img">
+            <img src="image1.png" alt="FIFA 16 Android gameplay cover" loading="eager">
+          </div>
+
+          <!-- ARTICLE CONTENT -->
+          <article class="article-body">
+
+            <h2>FIFA 16 Comes Back for Android 15+</h2>
+            <p>This FIFA 16 mod has been repackaged and tested to run properly on Android 15 and newer devices, fixing the crashes and compatibility issues older builds had on recent phones.</p>
+            <p>It keeps the classic FIFA 16 gameplay feel while running smoothly on current hardware, with HD-quality textures and stadium visuals.</p>
+
+            <img src="image2.png" alt="FIFA 16 Android in-game screenshot">
+
+            <h2>What's Included</h2>
+            <p>The package comes in two parts — the main APK installer and a separate OBB data file. Both are required for the game to run.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>Optimized for Android 15+ compatibility</li>
+              <li>HD graphics and stadium detail</li>
+              <li>Smooth offline gameplay — no internet required after install</li>
+              <li>Classic FIFA 16 game modes</li>
+            </ul>
+
+            <blockquote>Install the APK first, then place the OBB file in the correct folder before launching the game — see the install steps below.</blockquote>
+
+            <!-- ★ AD SLOT 2 — MID CONTENT · PASTE YOUR AD CODE INSIDE .ad-wrap BELOW -->
+            <div class="ad-block" style="margin:32px 0;">
+              <div class="ad-label">Advertisement</div>
+              <div class="ad-wrap">
+                <!-- ✏️ PASTE AD CODE HERE (AD SLOT 2 — MID CONTENT) -->
+                <script async="async" data-cfasync="false" src="https://pl28010185.effectivecpmnetwork.com/19d5848187fa0c34da2f2a818443e3a4/invoke.js"></script>
+<div id="container-19d5848187fa0c34da2f2a818443e3a4"></div>
+              </div>
+            </div>
+
+            <h2>Installation Guide</h2>
+            <p>Follow these steps in order to get FIFA 16 running correctly on your device:</p>
+            <ol>
+              <li>Download the APK file using the button below.</li>
+              <li>Download the OBB file (it's a compressed .7z archive — extract it first).</li>
+              <li>Install the APK, but don't open it yet.</li>
+              <li>Move the extracted OBB folder to <code>Android/obb/</code> on your device storage.</li>
+              <li>Launch the game from your app drawer.</li>
+            </ol>
+
+            <img src="image3.png" alt="FIFA 16 Android install screenshot">
+
+            <h2>Download</h2>
+            <p>Grab both files below — the APK installs the app itself, and the OBB contains the game data it needs to run.</p>
+
+            <div class="dl-row">
+              <a href="https://www.mediafire.com/file/uziropjjb1qev4a/lkssaske.apk/file" class="btn-dl" target="_blank" rel="noopener">⬇ Download APK (Android 15+ App)</a>
+              <a href="https://www.mediafire.com/file/mhaewwxd6d2ln04/FIFA-16-GABO.7z/file?fbclid=Iwb21leAQJ9HZjbGNrA0fN52V4dG4DYWVtAjExAAEe7hmpLgR_kDEcHB0DeWDONotzZGaLahLXANKwL_AERDItxFiO_H9DWiYcV0w_aem_T08GfL5Z24Hq9a5YFidNKQ&dkey=o18abnkb3a4&r=744" class="btn-dl obb" target="_blank" rel="noopener">⬇ Download OBB Data File</a>
+              <a href="https://www.effectivecpmnetwork.com/cnejbys5?key=b7df287a344ce661d8c8e2bcfc343b14" class="btn-dl obb" target="_blank" rel="noopener">More Versions</a>
+           
+            </div>
+
+          </article>
+
+          <!-- ★ AD SLOT 3 — AFTER CONTENT · PASTE YOUR AD CODE INSIDE .ad-wrap BELOW -->
+          <div class="ad-block" style="margin-top:36px;">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-wrap">
+              <!-- ✏️ PASTE AD CODE HERE (AD SLOT 3 — AFTER CONTENT) -->
+              <script>
+  atOptions = {
+    'key' : '617a1d0f52818c4a8a34f0e15034dd21',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/617a1d0f52818c4a8a34f0e15034dd21/invoke.js"></script>
+            </div>
+          </div>
+
+        </div>
+        <!-- END LEFT -->
+
+
+        <!-- RIGHT: sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-sticky">
+
+            <!-- ★ AD SLOT 4 — SIDEBAR · PASTE YOUR AD CODE INSIDE .ad-wrap BELOW -->
+            <div class="ad-block" style="margin:0;">
+              <div class="ad-label">Advertisement</div>
+              <div class="ad-wrap">
+                <!-- ✏️ PASTE AD CODE HERE (AD SLOT 4 — SIDEBAR) -->
+                <script>
+  atOptions = {
+    'key' : '617a1d0f52818c4a8a34f0e15034dd21',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/617a1d0f52818c4a8a34f0e15034dd21/invoke.js"></script>
+                <script>
+  atOptions = {
+    'key' : '617a1d0f52818c4a8a34f0e15034dd21',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/617a1d0f52818c4a8a34f0e15034dd21/invoke.js"></script>
+              </div>
+            </div>
+
+            <!-- INFO BOX -->
+            <div class="info-box">
+              <div class="info-box-title">Quick Info</div>
+              <div class="info-row"><span class="lbl">Version</span><span class="val">FIFA 16 Mod</span></div>
+              <div class="info-row"><span class="lbl">Platform</span><span class="val">Android 15+</span></div>
+              <div class="info-row"><span class="lbl">Files</span><span class="val">APK + OBB</span></div>
+              <div class="info-row"><span class="lbl">Updated</span><span class="val">July 2026</span></div>
+            </div>
+
+            <!-- TAGS -->
+            <div class="tags-wrap">
+              <div class="tags-title">Tags</div>
+              <div class="tags">
+                <span class="tag">FIFA 16</span>
+                <span class="tag">Android</span>
+                <span class="tag">Football</span>
+                <span class="tag">APK OBB</span>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+        <!-- END SIDEBAR -->
+
+      </div><!-- end .page-layout -->
+
+
+      <!-- ════════════════════════════════════════════════════
+           EXPLORE MORE — related posts
+           ════════════════════════════════════════════════════ -->
+      <div class="explore-section">
+        <div class="sec-head">
+          <h2>Explore More</h2>
+          <span class="sec-badge">Related</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="cards-grid">
+
+          <a href="https://lkssaske.github.io/efootball%20ppsspp(Copy)(Copy).html" class="card">
+            <div class="thumb">
+              <img src="1781167116506.jpg" alt="PES PPSSPP 2026 updates" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat">ppsspp</div>
+              <h3>PES PPSSPP 2026 UPDATES</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+          <a href="https://lkssaske47-creator.github.io" class="card">
+            <div class="thumb">
+              <img src="file_000000009a787246908c5afd984c1ccf.png" alt="More games and tutorials" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat cyan">saske2</div>
+              <h3>MORE GAMES AND TUTORIALS</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+          <a href="https://www.mediafire.com/file/f7ffccf5aagqebl/LKS_SASKE%25282%2529.apk/file" class="card">
+            <div class="thumb">
+              <img src="file_000000005d0c71f4b9cd9cdd452b0d72.png" alt="LKS SASKE App" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-cat red">APPS</div>
+              <h3>LKS SASKE APP</h3>
+              <span class="read-more">Read More</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <!-- ════════════════════════════════════════════════════ -->
+
+
+      <!-- ★ AD SLOT 5 — BEFORE SOCIAL · PASTE YOUR AD CODE INSIDE .ad-wrap BELOW -->
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrap">
+          <!-- ✏️ PASTE AD CODE HERE (AD SLOT 5 — BEFORE SOCIAL) -->
+          <script>
+  atOptions = {
+    'key' : '617a1d0f52818c4a8a34f0e15034dd21',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/617a1d0f52818c4a8a34f0e15034dd21/invoke.js"></script>
+        </div>
+      </div>
+
+
+      <!-- SOCIAL — shared, do not edit -->
+      <div class="social-bar">
+        <h2>Follow Us On</h2>
+        <p>Stay updated with the latest game mods, tutorials and guides</p>
+        <div class="social-grid">
+          <a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank" class="social-btn yt">YouTube</a>
+          <a href="https://www.facebook.com/profile.php?id=100092680726769" target="_blank" class="social-btn fb">Facebook</a>
+          <a href="https://instagram.com/lks_saske?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="social-btn ig">Instagram</a>
+          <a href="https://whatsapp.com/channel/0029Va9GzxJ6hENubPO66X3X" target="_blank" class="social-btn wa">WhatsApp</a>
+          <a href="https://t.me/lkssaske" target="_blank" class="social-btn tg">Telegram</a>
+          <a href="https://discord.com/invite/aWNg7Tf4" target="_blank" class="social-btn dc">Discord</a>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </main>
+
+
+  <!-- FOOTER — shared, do not edit -->
+  <footer>
+    <div class="footer-logo">LKS SASKE</div>
+    <div class="footer-tagline">Your #1 Gaming &amp; Tech Hub — PPSSPP Mods, Football Games, Tutorials &amp; Guides</div>
+    <div class="footer-links">
+      <a href="PRIVACY POLICY .html">Privacy Policy</a>
+      <a href="DISCLAIMER .html">Disclaimer</a>
+      <a href="About.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="SEARCH SASKE.html">Search</a>
+    </div>
+    <div class="footer-copy">&copy; 2024 LKS SASKE. All rights reserved. // BUILT FOR GAMERS</div>
+  </footer>
+
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">▲</button>
+
+
+  <script>
+    // Image fallback
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        if (!this.dataset.err) {
+          this.dataset.err = '1';
+          this.src = 'a69e1a13-3318-43fe-8d01-f2c0499fc12f.jpg';
+        }
+      }, { once: true });
+    });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+      bar.style.width = pct + '%';
+    });
+
+    // Navbar + back-to-top
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+      document.getElementById('backTop').classList.toggle('show', window.scrollY > 60);
+    });
+
+    // Hamburger
+    function toggleMenu() {
+      const m = document.getElementById('mobileMenu');
+      const h = document.getElementById('hamburger');
+      const open = m.classList.toggle('open');
+      h.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    document.addEventListener('click', e => {
+      const m = document.getElementById('mobileMenu');
+      const h = document.getElementById('hamburger');
+      if (m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) {
+        m.classList.remove('open'); h.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+
+    // Card reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0) scale(1)';
+        }, (i % 6) * 80);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.opacity = '0';
+      c.style.transform = 'translateY(22px) scale(0.97)';
+      c.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s, border-color 0.3s';
+      obs.observe(c);
+    });
+
+    // Active nav link
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  </script>
+
+</body>
+</html>
