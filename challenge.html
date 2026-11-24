@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8431384018303453" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="LKS SASKE Challenge Generator - pick a club from 15+ leagues and roll a random challenge for Football Club Management 2026 (FCM 26) and First Team Manager 2027 (FTM 27)">
+  <meta name="monetag" content="37a1592b440e7b588f006f786752db6c">
+  <title>Challenge Generator | LKS SASKE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbf8ff;--card:#fff;--border:rgba(91,33,182,.13);
+      --p1:#4c1d95;--p2:#6d28d9;--p3:#8b5cf6;--cyan:#06b6d4;--green:#16a34a;
+      --text:#17102a;--muted:#6f6682;--nav-h:68px;
+      --shadow:0 10px 28px rgba(76,29,149,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{font-family:'Rajdhani',sans-serif;color:var(--text);overflow-x:hidden;min-height:100vh;
+      background:linear-gradient(180deg,#fff 0%,#fbf8ff 30%,#f1e9ff 100%)}
+    a{text-decoration:none;color:inherit}
+    button,select,input{font-family:inherit}
+    button{cursor:pointer}
+    #progress-bar{position:fixed;top:0;left:0;height:4px;width:0;z-index:9999;background:linear-gradient(90deg,#6d28d9,#a855f7,#06b6d4)}
+
+    /* NAV */
+    .navbar{position:fixed;top:4px;left:12px;right:12px;height:var(--nav-h);z-index:1000;display:flex;align-items:center;justify-content:space-between;
+      padding:0 clamp(14px,3vw,28px);background:rgba(255,255,255,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+      border:1px solid rgba(124,58,237,.14);border-radius:0 0 18px 18px;box-shadow:0 14px 44px rgba(76,29,149,.10)}
+    .nav-logo,.footer-logo{font-family:'Orbitron',monospace;font-weight:900;background:linear-gradient(135deg,#4c1d95,#8b5cf6 48%,#06b6d4);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-logo{font-size:clamp(.9rem,3.5vw,1.15rem);white-space:nowrap}
+    .nav-links{display:flex;gap:2px;list-style:none}
+    .nav-links a{font-weight:700;font-size:.9rem;padding:7px 14px;border-radius:999px;color:#625675;transition:.2s}
+    .nav-links a:hover,.nav-links a.active{color:#5b21b6;background:#f1e8ff}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:9px;border-radius:8px;border:1px solid rgba(124,58,237,.18);background:#f3eaff}
+    .hamburger span{display:block;height:2px;background:#6d28d9;border-radius:2px;transition:.3s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{position:fixed;top:calc(var(--nav-h) + 12px);left:8px;right:8px;z-index:999;display:flex;flex-direction:column;gap:6px;padding:14px;
+      background:rgba(255,255,255,.97);border:1px solid rgba(124,58,237,.14);border-radius:14px;box-shadow:var(--shadow);transform:translateY(-130%);transition:transform .35s ease}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{font-weight:700;padding:12px 16px;border-radius:8px;background:#f8f5ff;color:#312147;border:1px solid rgba(124,58,237,.12)}
+    @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.navbar{left:8px;right:8px}}
+
+    main{padding-top:calc(var(--nav-h) + 24px);position:relative;z-index:2}
+    .container{max-width:1120px;margin:0 auto;padding:0 clamp(12px,4vw,28px)}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 22px;border-radius:999px;font-weight:700;font-size:1rem;border:1px solid transparent;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#6d28d9,#9f67ff);color:#fff;box-shadow:0 12px 26px rgba(109,40,217,.28)}
+    .btn-ghost{background:#fff;color:#5b21b6;border-color:rgba(124,58,237,.24);box-shadow:0 8px 20px rgba(76,29,149,.08)}
+    .btn-sm{min-height:36px;padding:6px 14px;font-size:.88rem}
+    .game.ftm .btn-primary{background:linear-gradient(135deg,#0891b2,#22d3ee);box-shadow:0 12px 26px rgba(6,182,212,.28)}
+
+    /* ===== HERO ===== */
+    .hero{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:20px;align-items:center;overflow:hidden;
+      padding:clamp(26px,5vw,56px) clamp(18px,5vw,56px);border:1px solid rgba(124,58,237,.14);border-radius:16px;margin-bottom:28px;
+      background:radial-gradient(circle at 78% 40%,rgba(139,92,246,.22),transparent 55%),radial-gradient(circle at 10% 90%,rgba(6,182,212,.14),transparent 50%),linear-gradient(135deg,#fff,#f6efff 60%,#e9fbff);
+      box-shadow:0 26px 78px rgba(76,29,149,.12)}
+    .hero .badge{display:inline-flex;align-items:center;gap:8px;font-family:'Orbitron',monospace;font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      padding:6px 16px;border-radius:999px;background:#fff;border:1px solid rgba(124,58,237,.18);color:#5b21b6;margin-bottom:16px}
+    .badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 1.2s infinite}
+    @keyframes blink{50%{opacity:.25}}
+    .hero h1{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(1.8rem,5.4vw,3.5rem);line-height:1.08;color:#160b2e;margin-bottom:14px}
+    .hero h1 span{background:linear-gradient(135deg,#4c1d95,#8b5cf6 55%,#06b6d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:#5d526e;max-width:520px;font-size:clamp(1rem,2.2vw,1.18rem);line-height:1.6;margin-bottom:22px}
+    .jump{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{background:#fff;border:1px solid rgba(124,58,237,.14);border-radius:10px;padding:10px 16px;box-shadow:0 8px 20px rgba(76,29,149,.07);min-width:96px}
+    .chip b{display:block;font-family:'Orbitron',monospace;font-size:1.25rem;background:linear-gradient(135deg,#4c1d95,#06b6d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
+    .chip span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .hero-holo{display:flex;flex-direction:column;align-items:center}
+    .holo-cap{font-family:'Orbitron',monospace;font-weight:900;letter-spacing:4px;font-size:clamp(.9rem,2.2vw,1.2rem);margin-bottom:2px;
+      background:linear-gradient(135deg,#4c1d95,#8b5cf6 55%,#06b6d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.jump,.chips{justify-content:center}.hero-holo{order:-1}}
+
+    /* ===== 3D HOLOGRAM ===== */
+    .h3d{--h1:#7c3aed;--h2:#06b6d4;position:relative;width:var(--w,300px);max-width:100%;aspect-ratio:240/230}
+    .game .h3d{--h1:#a78bfa;--h2:#22d3ee}
+    .h3d-stage{position:absolute;inset:0;perspective:900px;border-radius:50%/46%;
+      background:radial-gradient(ellipse at 50% 58%,rgba(139,92,246,.28),rgba(6,182,212,.08) 52%,transparent 72%)}
+    .h3d-stage::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+      background:repeating-linear-gradient(0deg,rgba(109,40,217,.07) 0 1px,transparent 1px 4px)}
+    .h3d-beam{position:absolute;left:50%;bottom:11%;width:62%;height:78%;transform:translateX(-50%);clip-path:polygon(16% 0,84% 0,100% 100%,0 100%);
+      background:linear-gradient(to top,rgba(124,58,237,.32),rgba(6,182,212,.05) 80%,transparent)}
+    .h3d-ring{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;border:2px solid var(--h1);box-shadow:0 0 14px var(--h1)}
+    .h3d-ring.r1{bottom:5%;width:72%;height:12%}
+    .h3d-ring.r2{bottom:2%;width:92%;height:16%;border-color:var(--h2);box-shadow:none;opacity:.4}
+    .h3d-tilt{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-9deg)}
+    .h3d-spin{position:absolute;inset:0;transform-style:preserve-3d;animation:h3dspin 9s linear infinite}
+    @keyframes h3dspin{to{transform:rotateY(360deg)}}
+    .h3d:hover .h3d-spin{animation-play-state:paused}
+    .h3d-layer{position:absolute;inset:0}
+    .h3d-layer svg{width:100%;height:100%;display:block;overflow:visible}
+    .hp{fill:none;stroke:var(--c);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+    .hp circle{fill:var(--c);fill-opacity:.16}
+    .hb circle{fill:var(--c);fill-opacity:.25;stroke:var(--c);stroke-width:2.5}
+    .hb path{fill:none;stroke:var(--c);stroke-width:1.6}
+    .hl-kick{transform-box:view-box;transform-origin:110px 120px;animation:hkick 2.8s ease-in-out infinite}
+    @keyframes hkick{0%,10%{transform:rotate(0)}35%{transform:rotate(38deg)}46%{transform:rotate(-38deg)}60%{transform:rotate(-68deg)}85%,100%{transform:rotate(0)}}
+    .hl-ball{animation:hball 2.8s linear infinite}
+    @keyframes hball{
+      0%,45%{transform:translate(0,0);opacity:1}
+      55%{transform:translate(25px,-40px)}
+      65%{transform:translate(50px,-60px)}
+      75%{transform:translate(72px,-48px);opacity:1}
+      84%{transform:translate(88px,-10px);opacity:0}
+      85%,97%{transform:translate(0,0);opacity:0}
+      100%{transform:translate(0,0);opacity:1}}
+    .h3d.paused *{animation-play-state:paused!important}
+
+    /* ===== GAME SECTIONS ===== */
+    .game{margin-bottom:34px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:90px}
+    .game-head{padding:clamp(18px,4vw,30px) clamp(16px,4vw,34px);color:#fff;background:radial-gradient(circle at 85% 50%,rgba(139,92,246,.45),transparent 55%),linear-gradient(135deg,#1b1033,#3b1a7a 65%,#5b21b6)}
+    .game.ftm .game-head{background:radial-gradient(circle at 85% 50%,rgba(34,211,238,.35),transparent 55%),linear-gradient(135deg,#062a3a,#0e4f68 60%,#2e1065)}
+    .gh-grid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px;align-items:center}
+    @media(max-width:760px){.gh-grid{grid-template-columns:1fr;text-align:center}.gh-grid .h3d{order:-1;margin:0 auto}}
+    .tag{font-family:'Orbitron',monospace;font-size:.62rem;font-weight:900;letter-spacing:2px;color:#c4b5fd;text-transform:uppercase}
+    .game.ftm .tag{color:#67e8f9}
+    .game-head h2{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(1.1rem,3.6vw,1.75rem);margin:6px 0 10px}
+    .game-head p{color:rgba(255,255,255,.82);line-height:1.6;font-size:1.02rem;max-width:760px}
+    .game-banner{position:relative;aspect-ratio:21/8;overflow:hidden;background:#1b1033}
+    .game-banner img{width:100%;height:100%;object-fit:cover;display:block}
+    .gb-over{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(26,10,56,.85));pointer-events:none}
+    .gb-txt{position:absolute;left:clamp(14px,3vw,28px);bottom:clamp(10px,2vw,18px);color:#fff;font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(.8rem,2.6vw,1.3rem);text-shadow:0 2px 12px rgba(0,0,0,.5)}
+    .gb-txt small{display:block;font-size:.6em;letter-spacing:2px;color:#c4b5fd;font-weight:700;margin-bottom:2px}
+    .game-body{padding:clamp(14px,4vw,30px)}
+
+    .step{display:flex;align-items:center;gap:10px;font-family:'Orbitron',monospace;font-size:.74rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--p1);margin:0 0 12px}
+    .step .num{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#6d28d9,#9f67ff);color:#fff;font-size:.72rem}
+    .game.ftm .step .num{background:linear-gradient(135deg,#0891b2,#22d3ee)}
+
+    /* PICKER */
+    .picker{border:1px solid var(--border);border-radius:14px;background:#fbf8ff;padding:14px;margin-bottom:24px}
+    .pk-top{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+    .pk-top input{flex:1;min-width:160px;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid rgba(124,58,237,.22);background:#fff;font-size:1rem;font-weight:600;color:var(--text);outline:none}
+    .pk-top input:focus{border-color:var(--p3);box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+    .lg-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:700;font-size:.88rem;color:var(--muted);margin-bottom:8px}
+    .lg-all{border:0;background:none;color:var(--p2);font-weight:700;font-size:.88rem;text-decoration:underline;padding:4px}
+    .tabs-wrap{position:relative;margin-bottom:8px}
+    .tabs-wrap::before,.tabs-wrap::after{content:'';position:absolute;top:0;bottom:8px;width:44px;z-index:1;pointer-events:none;opacity:0;transition:opacity .2s}
+    .tabs-wrap::before{left:0;background:linear-gradient(90deg,#fbf8ff 25%,transparent)}
+    .tabs-wrap::after{right:0;background:linear-gradient(270deg,#fbf8ff 25%,transparent)}
+    .tabs-wrap.can-l::before,.tabs-wrap.can-r::after{opacity:1}
+    .tab-arrow{position:absolute;top:0;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:var(--p2);font-size:1.4rem;font-weight:900;line-height:1;
+      box-shadow:0 4px 14px rgba(76,29,149,.3);display:none;place-items:center;padding-bottom:3px}
+    .tab-arrow.l{left:0}.tab-arrow.r{right:0}
+    .tabs-wrap.can-l .tab-arrow.l,.tabs-wrap.can-r .tab-arrow.r{display:grid}
+    .tabs-wrap.expanded::before,.tabs-wrap.expanded::after{display:none}
+    .tabs-wrap.expanded .tab-arrow{display:none!important}
+    .tabs-wrap.expanded .tabs{flex-wrap:wrap;overflow:visible}
+    .tabs{position:relative;display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-behavior:smooth;padding:2px 2px 10px;scrollbar-width:none}
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:6px 14px;border-radius:999px;border:1px solid rgba(124,58,237,.2);background:#fff;color:#4b3b66;font-weight:700;font-size:.92rem;white-space:nowrap;transition:.2s}
+    .tab:hover{background:#f1e8ff}
+    .tab.on{background:linear-gradient(135deg,#6d28d9,#9f67ff);color:#fff;border-color:transparent;box-shadow:0 8px 18px rgba(109,40,217,.25)}
+    .game.ftm .tab.on{background:linear-gradient(135deg,#0891b2,#22d3ee);box-shadow:0 8px 18px rgba(6,182,212,.25)}
+    .tab small{opacity:.7;font-size:.75rem}
+    .teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;padding:4px}
+    @media(max-width:480px){.teams{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.team{padding:12px 3px 8px}.team .crest{width:42px;height:42px;font-size:.78rem}.tn{font-size:.78rem}.tl{font-size:.6rem}}
+    .team{min-width:0}.tn{overflow-wrap:anywhere}
+    .team{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px 10px;border-radius:12px;background:#fff;border:2px solid transparent;
+      box-shadow:0 4px 14px rgba(76,29,149,.08);transition:transform .18s,border-color .18s,box-shadow .18s;text-align:center}
+    .team:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(76,29,149,.16)}
+    .team.on{border-color:var(--p3);box-shadow:0 0 0 3px rgba(139,92,246,.2),0 10px 24px rgba(76,29,149,.18)}
+    .game.ftm .team.on{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(6,182,212,.2),0 10px 24px rgba(6,182,212,.18)}
+    .team.on::after{content:'\2713';position:absolute;top:6px;right:8px;width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:.75rem;font-weight:900;display:grid;place-items:center}
+    .crest{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;font-family:'Orbitron',monospace;font-weight:900;font-size:.95rem;box-shadow:inset 0 -6px 12px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.7)}
+    .tn{font-weight:700;font-size:.95rem;line-height:1.15;color:#211338}
+    .tl{font-size:.68rem;color:var(--muted);font-weight:600;margin-top:-4px}
+    .tt{font-size:.8rem;color:#f59e0b;letter-spacing:1px;line-height:1}
+    .tt i{font-style:normal;color:#d9d2e6}
+    .no-res{grid-column:1/-1;text-align:center;color:var(--muted);padding:24px}
+    .sel-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px;padding:10px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(124,58,237,.3)}
+    .sel-bar .crest{width:38px;height:38px;font-size:.72rem}
+    .sel-info{flex:1;min-width:140px}
+    .sel-info b{display:block;font-family:'Orbitron',monospace;font-size:.95rem;color:#160b2e}
+    .sel-info span{font-size:.82rem;color:var(--muted);font-weight:600}
+    .custom{display:none;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .custom.open{display:flex}
+    .custom input,.custom select{flex:1;min-width:140px;min-height:42px;padding:8px 14px;border-radius:10px;border:1px solid rgba(124,58,237,.22);background:#fff;font-size:1rem;font-weight:600;outline:none}
+
+    /* DIFFICULTY + RESULT */
+    .gb2{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:24px}
+    @media(max-width:860px){.gb2{grid-template-columns:1fr}}
+    .diffs{display:grid;gap:8px;margin-bottom:16px}
+    .dbtn{display:flex;align-items:center;gap:12px;text-align:left;padding:11px 14px;border-radius:12px;border:2px solid rgba(124,58,237,.16);background:#fff;transition:.2s}
+    .dbtn:hover{border-color:var(--p3)}
+    .dbtn .ic{font-size:1.4rem}
+    .dbtn b{display:block;font-family:'Orbitron',monospace;font-size:.82rem;color:#160b2e}
+    .dbtn span{font-size:.84rem;color:var(--muted);font-weight:600}
+    .dbtn.on{border-color:var(--p2);background:linear-gradient(135deg,#f6efff,#fff);box-shadow:0 8px 20px rgba(109,40,217,.15)}
+    .game.ftm .dbtn.on{border-color:var(--cyan);background:linear-gradient(135deg,#e9fbff,#fff);box-shadow:0 8px 20px rgba(6,182,212,.15)}
+    .gen{width:100%;min-height:56px;font-family:'Orbitron',monospace;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase}
+    .shake{animation:shake .4s}
+    @keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+    .result{min-height:300px;border-radius:14px;border:2px dashed rgba(124,58,237,.3);background:#fbf8ff;padding:clamp(14px,3vw,24px);display:flex;flex-direction:column;transition:background .3s}
+    .result.on{border:1px solid rgba(167,139,250,.45);color:#fff;background:radial-gradient(circle at 90% 0,rgba(139,92,246,.45),transparent 50%),linear-gradient(135deg,#1b1033,#2e1065);box-shadow:0 18px 50px rgba(46,16,101,.35)}
+    .game.ftm .result.on{background:radial-gradient(circle at 90% 0,rgba(34,211,238,.35),transparent 50%),linear-gradient(135deg,#062a3a,#12365a 55%,#2e1065);border-color:rgba(103,232,249,.4)}
+    .empty{margin:auto;text-align:center;color:var(--muted);line-height:1.6;padding:20px}
+    .empty .big{font-size:2.4rem;display:block;margin-bottom:6px}
+    .empty b{display:block;font-family:'Orbitron',monospace;color:var(--p2);font-size:.9rem;margin-bottom:6px}
+    .ch-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .ch-id{display:flex;align-items:center;gap:12px}
+    .ch-id .crest{width:48px;height:48px}
+    .ch-team{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(1rem,3vw,1.3rem)}
+    .ch-meta{font-size:.85rem;color:rgba(255,255,255,.7);font-weight:600;margin-top:2px}
+    .score{text-align:right}
+    .score b{display:block;font-family:'Orbitron',monospace;font-size:1.7rem;color:#fde68a;line-height:1;animation:pulse .6s}
+    @keyframes pulse{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+    .score span{font-size:.72rem;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .slot{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+    .slot .k{flex-shrink:0;min-width:70px;font-family:'Orbitron',monospace;font-size:.6rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:5px 8px;border-radius:999px;text-align:center;margin-top:2px;background:#ede3ff;color:#5b21b6}
+    .slot .k.rule{background:#cffafe;color:#0e7490}
+    .slot .k.twist{background:#ffe4ec;color:#be123c}
+    .slot .t{flex:1;font-weight:600;font-size:1.05rem;line-height:1.45;min-height:1.45em}
+    .slot .t.rolling{opacity:.65;filter:blur(.6px);font-family:'Share Tech Mono',monospace;font-size:.95rem}
+    .slot .rr{flex-shrink:0;width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:1rem;transition:.2s}
+    .slot .rr:hover{background:rgba(255,255,255,.25);transform:rotate(180deg)}
+    .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .result .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.28);box-shadow:none}
+    .note{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:12px}
+
+    /* HISTORY */
+    .history{padding:0 clamp(14px,4vw,30px) clamp(16px,4vw,28px)}
+    .history h3{font-family:'Orbitron',monospace;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--p1);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .hist-list{display:grid;gap:8px}
+    .hi{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:#fcfaff}
+    .hi.done{background:#f0fdf4;border-color:rgba(22,163,74,.3)}
+    .hi .info{flex:1;min-width:0}
+    .hi b{display:block;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hi small{color:var(--muted);font-weight:600}
+    .hi button{border:1px solid rgba(124,58,237,.2);background:#fff;border-radius:8px;padding:6px 10px;font-weight:700;color:#5b21b6;font-size:.82rem}
+    .hi.done .ok{background:var(--green);color:#fff;border-color:transparent}
+    .hist-empty{color:var(--muted);font-size:.92rem}
+
+    /* AD + FOOTER */
+    .ad-container{margin:26px auto;display:flex;flex-direction:column;align-items:center;gap:8px}
+    .ad-label{font-size:.72rem;color:#8b8197;letter-spacing:1px}
+    .ad-wrapper{background:linear-gradient(135deg,#fff,#faf7ff);border:1px solid var(--border);border-radius:10px;padding:10px;min-height:74px;display:flex;align-items:center;justify-content:center;width:100%;max-width:360px}
+    footer{background:#fff;border-top:1px solid rgba(124,58,237,.14);padding:36px 20px 22px;text-align:center;margin-top:50px}
+    .footer-logo{font-size:1.4rem;margin-bottom:8px}
+    .footer-tagline,.footer-copy{color:#6f6682;font-size:.85rem}
+    .footer-tagline{margin-bottom:18px}
+    .footer-links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+    .footer-links a{font-weight:700;font-size:.85rem;color:#5d526e;background:#fbf8ff;border:1px solid rgba(124,58,237,.12);padding:6px 14px;border-radius:6px}
+    .footer-links a:hover{color:#5b21b6;background:#f1e8ff}
+    .footer-copy{border-top:1px solid var(--border);padding-top:16px}
+    .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#27183d;color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;opacity:0;transition:.3s;z-index:2000;pointer-events:none}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:480px){.slot{flex-wrap:wrap}.slot .k{min-width:0}.actions .btn{flex:1}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+    /* ===== RESPONSIVE FIXES (no overflow, no overlap) ===== */
+    .hero>*,.hero-text,.hero-holo,.gh-grid>*,.gb2>*,.game-body,.picker,.result,.picker>*{min-width:0}
+    .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+    .hero h1,.game-head h2,.ch-team{overflow-wrap:anywhere}
+    .hero-holo{width:100%}
+    .h3d{overflow:hidden}
+    @media(max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:8px}.hero-holo .h3d{--w:300px!important}}
+    @media(max-width:860px){.gb2{grid-template-columns:minmax(0,1fr)}}
+    @media(max-width:760px){.gh-grid{grid-template-columns:minmax(0,1fr)}}
+    @media(max-width:600px){
+      .hero{padding:20px 16px 26px}
+      .hero h1{font-size:clamp(1.3rem,6.2vw,1.9rem);line-height:1.15}
+      .hero p{font-size:1rem}
+      .hero .badge{font-size:.58rem;letter-spacing:1px;padding:6px 12px}
+      .jump{flex-direction:column;align-items:stretch}
+      .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+      .chip{min-width:0;padding:8px 6px;text-align:center}
+      .chip b{font-size:1.05rem}.chip span{font-size:.62rem;letter-spacing:.5px}
+      .game-head{padding:18px 16px}
+      .game-head h2{font-size:1.05rem;line-height:1.3}
+      .game-head p{font-size:.98rem}
+      .game-body{padding:14px 12px}
+      .history{padding:0 12px 16px}
+      .h3d{--w:210px!important}
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">LKS SASKE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="challenge.html" class="active">Challenges</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="PRIVACY POLICY .html">Privacy</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="challenge.html">Challenges</a>
+    <a href="About.html">About Us</a>
+    <a href="https://youtube.com/@lks_saske.?si=UcuZfV2FPUeSvwaa" target="_blank" rel="noopener">YouTube</a>
+    <a href="PRIVACY POLICY .html">Privacy Policy</a>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <section class="hero">
+        <div class="hero-text">
+          <div class="badge"><i></i> Challenge Generator · Live</div>
+          <h1>Pick a club. Roll the dice. <span>Take the challenge.</span></h1>
+          <p>Choose from clubs in every major league, set your difficulty and get a goal, rules and a twist for Football Club Management 2026 and First Team Manager 2027.</p>
+          <div class="jump">
+            <a href="#fcm" class="btn btn-primary">FCM 26 Challenges</a>
+            <a href="#ftm" class="btn btn-ghost">FTM 27 Challenges</a>
+          </div>
+          <div class="chips">
+            <div class="chip"><b id="st-clubs">0</b><span>Clubs</span></div>
+            <div class="chip"><b id="st-leagues">0</b><span>Leagues</span></div>
+            <div class="chip"><b>2</b><span>Game modes</span></div>
+          </div>
+        </div>
+        <div class="hero-holo">
+          <div class="holo-cap">LKS SASKE</div>
+          <div class="h3d" data-h3d="7" style="--w:380px"></div>
+        </div>
+      </section>
+
+      <!-- ============ FCM ============ -->
+      <section class="game fcm" id="fcm" data-mode="fcm">
+        <div class="game-head">
+          <div class="gh-grid">
+            <div>
+              <div class="tag">Section 1 · Chairman Mode</div>
+              <h2>Football Club Management 2026 (FCM 26)</h2>
+              <p>You run the boardroom, not the touchline: finances, transfers, staff, stadium and fans. These challenges test how well you build and run a club as owner and chairman.</p>
+            </div>
+            <div class="h3d" data-h3d="5" style="--w:250px"></div>
+          </div>
+        </div>
+        <div class="game-banner">
+          <img src="fcm.png" alt="Football Club Management 2026 banner" loading="lazy" onerror="this.parentNode.style.display='none'">
+          <div class="gb-over"></div>
+          <div class="gb-txt"><small>CHAIRMAN MODE</small>FCM 26</div>
+        </div>
+        <div class="game-body" data-build></div>
+        <div class="history"><h3>Accepted challenges <button class="btn btn-ghost btn-sm" id="clr-fcm">Clear</button></h3><div class="hist-list" id="hist-fcm"></div></div>
+      </section>
+
+      <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrapper">
+          <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+          <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+        </div>
+      </div>
+
+      <!-- ============ FTM ============ -->
+      <section class="game ftm" id="ftm" data-mode="ftm">
+        <div class="game-head">
+          <div class="gh-grid">
+            <div>
+              <div class="tag">Section 2 · Manager Mode</div>
+              <h2>First Team Manager 2027 (FTM 27)</h2>
+              <p>You are the manager: squad, tactics, matchday decisions and dressing room. These challenges push your tactical thinking and test your team-building skills.</p>
+            </div>
+            <div class="h3d" data-h3d="5" style="--w:250px"></div>
+          </div>
+        </div>
+        <div class="game-banner">
+          <img src="ftm.png" alt="First Team Manager 2027 banner" loading="lazy" onerror="this.parentNode.style.display='none'">
+          <div class="gb-over"></div>
+          <div class="gb-txt"><small>MANAGER MODE</small>FTM 27</div>
+        </div>
+        <div class="game-body" data-build></div>
+        <div class="history"><h3>Accepted challenges <button class="btn btn-ghost btn-sm" id="clr-ftm">Clear</button></h3><div class="hist-list" id="hist-ftm"></div></div>
+      </section>
+
+      <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-wrapper">
+          <script>atOptions={'key':'f6ae19497a74d6460e556753c11983cf','format':'iframe','height':50,'width':320,'params':{}};</script>
+          <script src="https://www.highperformanceformat.com/f6ae19497a74d6460e556753c11983cf/invoke.js"></script>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">LKS SASKE</div>
+    <div class="footer-tagline">Your #1 Gaming &amp; Tech Hub · PPSSPP Mods, Football Games, Tutorials &amp; Guides</div>
+    <div class="footer-links">
+      <a href="PRIVACY POLICY .html">Privacy Policy</a>
+      <a href="DISCLAIMER .html">Disclaimer</a>
+      <a href="About.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="SEARCH SASKE.html">Search</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 LKS SASKE. All rights reserved.</div>
+  </footer>
+  <div class="toast" id="toast"></div>
+
+  <script>
+  (function () {
+    /* ---------- nav / progress ---------- */
+    var ham = document.getElementById('hamburger'), menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function () { ham.classList.toggle('open', menu.classList.toggle('open')); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('open'); ham.classList.remove('open'); }); });
+    var bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', function () {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? window.scrollY / h * 100 : 0) + '%';
+    });
+
+    /* ---------- clubs by league: [name, tier 1-3, colour1, colour2] ---------- */
+    var EN = '🏴󠁧󠁢󠁥󠁮󠁧󠁿';
+    var LEAGUES = [
+      { name: 'Premier League', flag: EN, teams: [
+        ['Arsenal',3,'#ef0107','#ffffff'],['Aston Villa',2,'#670e36','#95bfe5'],['Bournemouth',1,'#da291c','#111111'],['Brentford',1,'#e30613','#ffffff'],['Brighton',2,'#0057b8','#ffffff'],
+        ['Burnley',1,'#6c1d45','#99d6ea'],['Chelsea',3,'#034694','#ffffff'],['Crystal Palace',1,'#1b458f','#c4122e'],['Everton',1,'#003399','#ffffff'],['Fulham',1,'#111111','#ffffff'],
+        ['Leeds United',1,'#ffcd00','#1d428a'],['Liverpool',3,'#c8102e','#00b2a9'],['Man City',3,'#6cabdd','#1c2c5b'],['Man United',3,'#da291c','#fbe122'],['Newcastle',3,'#241f20','#ffffff'],
+        ['Nottm Forest',1,'#dd0000','#ffffff'],['Sunderland',1,'#eb172b','#ffffff'],['Tottenham',3,'#132257','#ffffff'],['West Ham',2,'#7a263a','#1bb1e7'],['Wolves',1,'#fdb913','#231f20'] ] },
+      { name: 'Championship', flag: EN, teams: [
+        ['Leicester City',2,'#003090','#fdbe11'],['Southampton',2,'#d71920','#ffffff'],['Sheffield United',1,'#ee2737','#111111'],['Middlesbrough',1,'#e30613','#ffffff'],['Norwich City',1,'#00a650','#fff200'],
+        ['Coventry City',1,'#59cbe8','#ffffff'],['Blackburn',1,'#009ee0','#ffffff'],['Swansea City',1,'#111111','#ffffff'],['West Brom',1,'#122f67','#ffffff'],['Derby County',1,'#111111','#ffffff'],
+        ['Sheff Wednesday',1,'#1c4fa2','#ffffff'],['Ipswich Town',2,'#0b4ea2','#ffffff'],['Watford',1,'#fbee23','#ed2127'],['Stoke City',1,'#e03a3e','#ffffff'],['Bristol City',1,'#e21a22','#ffffff'],
+        ['Millwall',1,'#001d5c','#ffffff'],['Preston',1,'#ffffff','#1c2c5b'],['QPR',1,'#005ca9','#ffffff'],['Hull City',1,'#f5a81c','#111111'],['Birmingham',1,'#0000ff','#ffffff'],
+        ['Portsmouth',1,'#001489','#ffffff'],['Oxford United',1,'#f7c700','#0a2342'],['Wrexham',1,'#d71920','#ffffff'],['Charlton',1,'#d4021d','#ffffff'] ] },
+      { name: 'La Liga', flag: '🇪🇸', teams: [
+        ['Real Madrid',3,'#ffffff','#febe10'],['Barcelona',3,'#a50044','#004d98'],['Atletico Madrid',3,'#cb3524','#272e61'],['Athletic Club',2,'#ee2523','#111111'],['Real Sociedad',2,'#0067b1','#ffffff'],
+        ['Villarreal',2,'#fbe122','#005187'],['Real Betis',2,'#0bb363','#ffffff'],['Sevilla',2,'#d71920','#ffffff'],['Valencia',2,'#111111','#ff7f00'],['Girona',1,'#ef3340','#ffffff'],
+        ['Celta Vigo',1,'#8ac3ee','#ffffff'],['Osasuna',1,'#d91a21','#0a346f'],['Getafe',1,'#005999','#ffffff'],['Mallorca',1,'#e20613','#111111'],['Rayo Vallecano',1,'#ffffff','#e53027'],
+        ['Espanyol',1,'#007fc8','#ffffff'],['Alaves',1,'#0761af','#ffffff'],['Elche',1,'#00873c','#ffffff'],['Levante',1,'#b4053f','#00529f'],['Real Oviedo',1,'#0b4ea2','#ffffff'] ] },
+      { name: 'Serie A', flag: '🇮🇹', teams: [
+        ['Inter Milan',3,'#0068a8','#111111'],['AC Milan',3,'#fb090b','#111111'],['Juventus',3,'#111111','#ffffff'],['Napoli',3,'#12a0d7','#ffffff'],['Roma',2,'#8e1f2f','#f0bc42'],
+        ['Lazio',2,'#87d8f7','#ffffff'],['Atalanta',2,'#1e71b8','#111111'],['Fiorentina',2,'#482e92','#ffffff'],['Bologna',1,'#1a2f48','#a21c26'],['Torino',1,'#8a1e41','#ffffff'],
+        ['Genoa',1,'#d71920','#0a2342'],['Udinese',1,'#111111','#ffffff'],['Sassuolo',1,'#00a550','#111111'],['Cagliari',1,'#a50034','#0a2342'],['Parma',1,'#fcd116','#0a2342'],
+        ['Lecce',1,'#f7d117','#e30613'],['Como',1,'#0057b8','#ffffff'],['Cremonese',1,'#d71920','#9aa0a6'],['Pisa',1,'#111111','#0057b8'],['Verona',1,'#fcd116','#0a2342'] ] },
+      { name: 'Bundesliga', flag: '🇩🇪', teams: [
+        ['Bayern Munich',3,'#dc052d','#0066b2'],['Dortmund',3,'#fde100','#111111'],['RB Leipzig',3,'#dd0741','#001f47'],['Leverkusen',3,'#e32221','#111111'],['Frankfurt',2,'#e1000f','#111111'],
+        ['Stuttgart',2,'#e32219','#ffffff'],['Wolfsburg',1,'#65b32e','#ffffff'],['Gladbach',1,'#111111','#00a650'],['Freiburg',1,'#d71920','#111111'],['Hoffenheim',1,'#1961b5','#ffffff'],
+        ['Werder Bremen',1,'#1d9053','#ffffff'],['Union Berlin',1,'#eb1923','#fcd116'],['Mainz 05',1,'#c3141e','#ffffff'],['Augsburg',1,'#ba3733','#00a650'],['Heidenheim',1,'#e2001a','#0a2342'],
+        ['St. Pauli',1,'#6a3b1f','#ffffff'],['FC Koln',1,'#e30613','#ffffff'],['Hamburg',1,'#0a3d91','#ffffff'] ] },
+      { name: 'Ligue 1', flag: '🇫🇷', teams: [
+        ['PSG',3,'#004170','#da291c'],['Marseille',2,'#2faee0','#ffffff'],['Monaco',2,'#e32219','#ffffff'],['Lyon',2,'#0a3d91','#da291c'],['Lille',2,'#e01e13','#1c2c5b'],
+        ['Nice',1,'#111111','#da291c'],['Lens',1,'#fcd116','#e30613'],['Rennes',1,'#e13327','#111111'],['Strasbourg',1,'#0a73c0','#ffffff'],['Nantes',1,'#fcd116','#00a650'],
+        ['Toulouse',1,'#5b2d90','#ffffff'],['Brest',1,'#e30613','#ffffff'],['Reims',1,'#e30613','#ffffff'],['Angers',1,'#111111','#ffffff'],['Auxerre',1,'#0a3d91','#ffffff'],
+        ['Le Havre',1,'#00a8e8','#0a2342'],['Metz',1,'#7b1e2f','#ffffff'],['Lorient',1,'#f58220','#111111'],['Paris FC',1,'#0a3d91','#ffffff'] ] },
+      { name: 'Eredivisie', flag: '🇳🇱', teams: [
+        ['Ajax',2,'#d2122e','#ffffff'],['PSV',2,'#ee2523','#ffffff'],['Feyenoord',2,'#e2001a','#111111'],['AZ Alkmaar',2,'#e4002b','#ffffff'],['FC Twente',1,'#e30613','#ffffff'],['FC Utrecht',1,'#e30613','#ffffff'],['Heerenveen',1,'#005eb8','#ffffff'],['Go Ahead Eagles',1,'#e30613','#fcd116'] ] },
+      { name: 'Portugal', flag: '🇵🇹', teams: [
+        ['Benfica',3,'#e30613','#ffffff'],['Porto',3,'#00428c','#ffffff'],['Sporting CP',3,'#00855b','#ffffff'],['Braga',2,'#e30613','#ffffff'],['Vitoria Guimaraes',1,'#111111','#ffffff'],['Famalicao',1,'#0057b8','#ffffff'],['Gil Vicente',1,'#d71920','#0a2342'] ] },
+      { name: 'Scotland', flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', teams: [
+        ['Celtic',2,'#16a34a','#ffffff'],['Rangers',2,'#1b458f','#ffffff'],['Hearts',1,'#9b1b30','#ffffff'],['Aberdeen',1,'#e30613','#ffffff'],['Hibernian',1,'#00a650','#ffffff'],['Dundee United',1,'#f58220','#111111'] ] },
+      { name: 'Turkey', flag: '🇹🇷', teams: [
+        ['Galatasaray',2,'#a90432','#fdb913'],['Fenerbahce',2,'#fcd116','#0a2342'],['Besiktas',2,'#111111','#ffffff'],['Trabzonspor',1,'#7b1e2f','#2faee0'],['Basaksehir',1,'#f58220','#0a2342'] ] },
+      { name: 'Belgium', flag: '🇧🇪', teams: [
+        ['Club Brugge',2,'#0a3d91','#111111'],['Anderlecht',2,'#5b2d90','#ffffff'],['Genk',1,'#0057b8','#ffffff'],['Union SG',1,'#fcd116','#0a2342'],['Gent',1,'#0057b8','#ffffff'],['Standard Liege',1,'#e30613','#ffffff'] ] },
+      { name: 'Saudi Pro', flag: '🇸🇦', teams: [
+        ['Al Hilal',2,'#0a3d91','#ffffff'],['Al Nassr',2,'#fcd116','#0a3d91'],['Al Ittihad',2,'#fcd116','#111111'],['Al Ahli',2,'#00a650','#ffffff'],['Al Shabab',1,'#ffffff','#00a650'],['Al Qadsiah',1,'#f58220','#0a2342'] ] },
+      { name: 'MLS', flag: '🇺🇸', teams: [
+        ['Inter Miami',2,'#f7b5cd','#111111'],['LA Galaxy',2,'#00245d','#fdb913'],['LAFC',2,'#111111','#c39e6d'],['Seattle Sounders',1,'#5d9732','#005595'],['NYC FC',1,'#6cace4','#f15524'],
+        ['Atlanta United',1,'#80000b','#111111'],['Columbus Crew',1,'#fedd00','#111111'],['Portland Timbers',1,'#00482b','#d69a00'],['Toronto FC',1,'#b81137','#111111'],['FC Cincinnati',1,'#f05323','#003087'] ] },
+      { name: 'Brazil', flag: '🇧🇷', teams: [
+        ['Flamengo',3,'#c8102e','#111111'],['Palmeiras',3,'#006437','#ffffff'],['Corinthians',2,'#111111','#ffffff'],['Sao Paulo',2,'#e30613','#111111'],['Santos',2,'#ffffff','#111111'],
+        ['Fluminense',2,'#7b1e2f','#00a650'],['Gremio',2,'#0d80bf','#111111'],['Internacional',2,'#e30613','#ffffff'],['Atletico Mineiro',2,'#111111','#ffffff'],['Botafogo',2,'#111111','#ffffff'],['Cruzeiro',2,'#0057b8','#ffffff'] ] },
+      { name: 'Argentina', flag: '🇦🇷', teams: [
+        ['Boca Juniors',3,'#0a3d91','#fcd116'],['River Plate',3,'#ffffff','#e30613'],['Racing Club',2,'#6cb4ee','#ffffff'],['Independiente',2,'#e30613','#ffffff'],['San Lorenzo',2,'#0a2342','#e30613'],['Velez',1,'#0a3d91','#ffffff'],['Estudiantes',1,'#e30613','#ffffff'] ] }
+    ];
+    var CLUB_TOTAL = LEAGUES.reduce(function (n, l) { return n + l.teams.length; }, 0);
+    document.getElementById('st-clubs').textContent = CLUB_TOTAL + '+';
+    document.getElementById('st-leagues').textContent = LEAGUES.length;
+
+    /* ---------- challenge data ---------- */
+    var DATA = {
+      fcm: {
+        goal: {
+          3: ['Win the league title in {n} consecutive seasons.','Win the Champions League within {n} seasons.','Win a domestic treble (league, cup, league cup) within {n} seasons.','Win the league while finishing every season with a profit, over {n} seasons.'],
+          2: ['Qualify for European football {n} seasons in a row.','Finish in the top 4 at least once within {n} seasons.','Win a major trophy within {n} seasons.','Take the club from mid-table to a league title within {n} seasons.'],
+          1: ['Avoid relegation for {n} seasons while turning a profit.','Reach the top half of the table within {n} seasons.','Win a domestic cup within {n} seasons.','Qualify for Europe within {n} seasons.']
+        },
+        rule: [
+          'Net transfer spend cannot exceed £{b}m per season.','Total wage bill must stay under {w}% of club income.','Never take a bank loan.','Only sign players aged 23 or under.',
+          'Upgrade the youth academy before the stadium.','Never raise ticket prices.','Appoint a manager who has never managed a top-flight club.','Sell no player under 21.',
+          'At least {y} academy players must be in every matchday squad.','Sign loan players only in your first transfer window.','Accept every sponsorship offer without negotiating.','Never sell a player to your biggest rival.'
+        ],
+        twist: [
+          'Sack-proof: keep your first manager for {n} seasons, no matter what.','Sell your best player in the first window and reinvest the money wisely.','Every summer, sign one player from a country you have never signed from.',
+          'Expand the stadium before signing any new player in season 2.','In press conferences, always back the fans.','Hire the cheapest available manager and stick with him.',
+          'Pick a random staff member each season to fire, then replace with someone better.','Your highest-paid player must be a homegrown or academy player.'
+        ]
+      },
+      ftm: {
+        goal: {
+          3: ['Win the league {n} seasons in a row.','Win the Champions League within {n} seasons.','Go a whole league season unbeaten.','Win a domestic treble within {n} seasons.'],
+          2: ['Finish in the top 4 within {n} seasons.','Win a cup competition within {n} seasons.','Reach a European final within {n} seasons.','Beat all of the top 3 clubs home and away in one season.'],
+          1: ['Avoid relegation for {n} seasons.','Finish in the top half within {n} seasons.','Reach a cup semi-final within {n} seasons.','Finish above your local rival for {n} seasons.']
+        },
+        rule: [
+          'Play only the {f} formation all season.','Net transfer spend cannot exceed £{b}m per season.','Always use the {s} mentality.','At least {y} players aged 21 or under in every matchday squad.',
+          'No signings over the age of 28.','No substitutions before the 60th minute.','Sign only free agents and loan players.','Your captain must be a homegrown player.',
+          'No player may start more than 5 games in a row.','Never sign a player from a bigger club than yours.','Scout and sign at least one foreign youngster every summer.','Do not use the same starting XI twice in a row.'
+        ],
+        twist: [
+          'Your first signing must be a goalkeeper.','Sell your highest-paid player in the first window.','Name a different captain every season.','Never drop your longest-serving player.',
+          'Use a different formation away from home than at home.','Build the team around your best player aged 20 or under.','Only pick players with odd shirt numbers in cup games.','Your penalty taker must be a defender or midfielder.'
+        ]
+      }
+    };
+    var FORMS = ['4-3-3','4-4-2','3-5-2','4-2-3-1','5-3-2','4-1-4-1'];
+    var STYLES = ['Attacking','Defensive','Counter-attack','Balanced'];
+    var DIFF = {
+      1: { name: 'Rookie', ic: '🟢', desc: '2 seasons · relaxed limits', n: 2, b: 30, w: 70, y: 2, mult: 1 },
+      2: { name: 'Pro', ic: '🟠', desc: '3 seasons · tighter budget', n: 3, b: 15, w: 60, y: 4, mult: 2 },
+      3: { name: 'Legend', ic: '🔴', desc: '5 seasons · brutal limits', n: 5, b: 5, w: 50, y: 6, mult: 3 }
+    };
+    var RANKS = [[0, 'Bronze'], [250, 'Silver'], [450, 'Gold'], [700, 'Elite']];
+    var TIERN = ['', 'Underdog', 'Contender', 'Elite club'];
+
+    /* ---------- helpers ---------- */
+    function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+    function fill(t, d) {
+      return t.replace('{n}', d.n).replace('{b}', d.b).replace('{w}', d.w).replace('{y}', d.y).replace('{f}', pick(FORMS)).replace('{s}', pick(STYLES));
+    }
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+    function light(hex) {
+      var h = hex.replace('#', ''); var r = parseInt(h.substr(0, 2), 16), g = parseInt(h.substr(2, 2), 16), b = parseInt(h.substr(4, 2), 16);
+      return (0.299 * r + 0.587 * g + 0.114 * b) > 150;
+    }
+    function initials(n) {
+      var w = n.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(Boolean);
+      if (!w.length) return '?';
+      return (w.length === 1 ? w[0].substr(0, 3) : w[0][0] + w[1][0]).toUpperCase();
+    }
+    function crest(t) {
+      return '<span class="crest" style="background:linear-gradient(135deg,' + t.c1 + ',' + t.c2 + ');color:' + (light(t.c1) ? '#111' : '#fff') + '">' + esc(initials(t.name)) + '</span>';
+    }
+    function stars(n) { var s = ''; for (var i = 1; i <= 3; i++) s += i <= n ? '★' : '<i>★</i>'; return s; }
+    var toastEl = document.getElementById('toast'), tt;
+    function toast(m) { toastEl.textContent = m; toastEl.classList.add('show'); clearTimeout(tt); tt = setTimeout(function () { toastEl.classList.remove('show'); }, 1800); }
+    function store(key, val) {
+      try { if (val === undefined) { return JSON.parse(localStorage.getItem(key) || '[]'); } localStorage.setItem(key, JSON.stringify(val)); } catch (e) { return []; }
+    }
+
+    /* ---------- 3D hologram ---------- */
+    var PLAYER = '<svg viewBox="0 0 240 230" aria-hidden="true"><g class="hp">' +
+      '<circle cx="112" cy="48" r="13"/><path d="M112 64 L110 120"/><path d="M112 74 L92 98 L84 118"/><path d="M112 74 L134 92 L150 82"/>' +
+      '<path d="M110 120 L104 162 L100 204 L113 204"/><g class="hl-kick"><path d="M110 120 L116 160 L112 200 L125 200"/></g></g>' +
+      '<g class="hb hl-ball"><circle cx="152" cy="196" r="9"/><path d="M152 190 L157 194 L155 200 L149 200 L147 194 Z"/></g></svg>';
+    function h3d(n) {
+      var L = '', step = 44 / (n - 1), i, z;
+      for (i = 0; i < n; i++) {
+        z = -22 + i * step;
+        L += '<div class="h3d-layer" style="transform:translateZ(' + z.toFixed(1) + 'px);--c:var(' + (i % 2 ? '--h2' : '--h1') + ');opacity:' + (Math.abs(z) < step / 2 ? 1 : 0.55) + '">' + PLAYER + '</div>';
+      }
+      for (i = -1; i <= 1; i++) {
+        L += '<div class="h3d-layer" style="transform:rotateY(90deg) translateZ(' + (i * 10) + 'px);--c:var(--h2);opacity:.3">' + PLAYER + '</div>';
+      }
+      return '<div class="h3d-stage"><div class="h3d-beam"></div><div class="h3d-ring r2"></div><div class="h3d-ring r1"></div>' +
+             '<div class="h3d-tilt"><div class="h3d-spin">' + L + '</div></div></div>';
+    }
+    document.querySelectorAll('[data-h3d]').forEach(function (el) {
+      el.innerHTML = h3d(+el.getAttribute('data-h3d'));
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { el.classList.toggle('paused', !en[0].isIntersecting); }).observe(el);
+      }
+    });
+
+    /* ---------- build each game section ---------- */
+    function build(mode) {
+      var root = document.getElementById(mode);
+      var body = root.querySelector('[data-build]');
+      var histEl = document.getElementById('hist-' + mode);
+      var KEY = 'lks_challenge_' + mode;
+      var pool = DATA[mode];
+      var leagueIdx = 0, query = '', sel = null, diff = 2, cur = null;
+
+      body.innerHTML =
+        '<div class="step"><span class="num">1</span>Pick a league &amp; club</div>' +
+        '<div class="picker">' +
+          '<div class="pk-top"><input type="text" class="q" placeholder="Search any club..." aria-label="Search clubs"><button class="btn btn-ghost btn-sm rnd">🎲 Surprise me</button><button class="btn btn-ghost btn-sm cu">+ My own club</button></div>' +
+          '<div class="lg-head"><span>Choose a league</span><button class="lg-all">Show all leagues</button></div>' +
+          '<div class="tabs-wrap"><button class="tab-arrow l" aria-label="Scroll leagues left">&#8249;</button><div class="tabs"></div><button class="tab-arrow r" aria-label="Scroll leagues right">&#8250;</button></div>' +
+          '<div class="teams"></div>' +
+          '<div class="custom"><input type="text" class="cn" maxlength="40" placeholder="Club name"><select class="ct"><option value="1">Underdog</option><option value="2" selected>Contender</option><option value="3">Elite club</option></select><button class="btn btn-primary btn-sm cuse">Use club</button></div>' +
+          '<div class="sel-bar"><span class="sel-crest"></span><div class="sel-info"><b>No club selected</b><span>Tap a club above</span></div></div>' +
+        '</div>' +
+        '<div class="gb2">' +
+          '<div><div class="step"><span class="num">2</span>Difficulty</div><div class="diffs"></div>' +
+          '<button class="btn btn-primary gen">🎲 Generate Challenge</button></div>' +
+          '<div><div class="step"><span class="num">3</span>Your challenge</div><div class="result"><div class="empty"><span class="big">🎯</span><b>No challenge yet</b>Select a club and hit Generate.</div></div></div>' +
+        '</div>';
+
+      var qIn = body.querySelector('.q'), tabsEl = body.querySelector('.tabs'), tabsWrap = body.querySelector('.tabs-wrap'), teamsEl = body.querySelector('.teams');
+      var selBar = body.querySelector('.sel-bar'), res = body.querySelector('.result'), diffsEl = body.querySelector('.diffs');
+      var customEl = body.querySelector('.custom');
+
+      /* tabs */
+      function renderTabs() {
+        tabsEl.innerHTML = LEAGUES.map(function (l, i) {
+          return '<button class="tab' + (!query && i === leagueIdx ? ' on' : '') + '" data-i="' + i + '"><span>' + l.flag + '</span>' + esc(l.name) + ' <small>' + l.teams.length + '</small></button>';
+        }).join('');
+        if (!query) { var a = tabsEl.querySelector('.tab.on'); if (a && !tabsWrap.classList.contains('expanded')) tabsEl.scrollLeft = Math.max(0, a.offsetLeft - 48); }
+        updArrows();
+      }
+      function updArrows() {
+        tabsWrap.classList.toggle('can-l', tabsEl.scrollLeft > 4);
+        tabsWrap.classList.toggle('can-r', tabsEl.scrollLeft + tabsEl.clientWidth < tabsEl.scrollWidth - 4);
+      }
+      tabsEl.addEventListener('scroll', updArrows);
+      window.addEventListener('resize', updArrows);
+      body.querySelector('.tab-arrow.l').addEventListener('click', function () { tabsEl.scrollBy({ left: -tabsEl.clientWidth * 0.7, behavior: 'smooth' }); });
+      body.querySelector('.tab-arrow.r').addEventListener('click', function () { tabsEl.scrollBy({ left: tabsEl.clientWidth * 0.7, behavior: 'smooth' }); });
+      body.querySelector('.lg-all').addEventListener('click', function () {
+        var ex = tabsWrap.classList.toggle('expanded');
+        this.textContent = ex ? 'Show fewer' : 'Show all leagues';
+        updArrows();
+      });
+      function teamObj(li, ti) { var t = LEAGUES[li].teams[ti]; return { k: li + ':' + ti, name: t[0], tier: t[1], c1: t[2], c2: t[3], league: LEAGUES[li].name }; }
+      function renderTeams() {
+        var out = [], q = query.trim().toLowerCase();
+        if (q) {
+          LEAGUES.forEach(function (l, li) { l.teams.forEach(function (t, ti) { if (t[0].toLowerCase().indexOf(q) > -1) out.push(teamObj(li, ti)); }); });
+        } else {
+          LEAGUES[leagueIdx].teams.forEach(function (t, ti) { out.push(teamObj(leagueIdx, ti)); });
+        }
+        teamsEl.innerHTML = out.length ? out.map(function (t) {
+          return '<button class="team' + (sel && sel.k === t.k ? ' on' : '') + '" data-k="' + t.k + '">' + crest(t) + '<span class="tn">' + esc(t.name) + '</span>' +
+                 (q ? '<span class="tl">' + esc(t.league) + '</span>' : '') + '<span class="tt">' + stars(t.tier) + '</span></button>';
+        }).join('') : '<div class="no-res">No club found. Try "+ My own club".</div>';
+      }
+      function renderSel() {
+        var c = body.querySelector('.sel-crest'), info = selBar.querySelector('.sel-info');
+        if (!sel) { c.innerHTML = ''; info.innerHTML = '<b>No club selected</b><span>Tap a club above</span>'; return; }
+        c.innerHTML = crest(sel);
+        info.innerHTML = '<b>' + esc(sel.name) + '</b><span>' + esc(sel.league) + ' · ' + TIERN[sel.tier] + '</span>';
+      }
+      function select(t) { sel = t; renderTeams(); renderSel(); }
+
+      tabsEl.addEventListener('click', function (e) {
+        var b = e.target.closest('.tab'); if (!b) return;
+        leagueIdx = +b.dataset.i; query = ''; qIn.value = ''; renderTabs(); renderTeams();
+      });
+      teamsEl.addEventListener('click', function (e) {
+        var b = e.target.closest('.team'); if (!b) return;
+        var p = b.dataset.k.split(':'); select(teamObj(+p[0], +p[1]));
+      });
+      qIn.addEventListener('input', function () { query = qIn.value; renderTabs(); renderTeams(); });
+      body.querySelector('.rnd').addEventListener('click', function () {
+        var li = Math.floor(Math.random() * LEAGUES.length), ti = Math.floor(Math.random() * LEAGUES[li].teams.length);
+        leagueIdx = li; query = ''; qIn.value = ''; select(teamObj(li, ti)); renderTabs();
+        var el = teamsEl.querySelector('.team.on'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      body.querySelector('.cu').addEventListener('click', function () { customEl.classList.toggle('open'); });
+      body.querySelector('.cuse').addEventListener('click', function () {
+        var n = body.querySelector('.cn').value.trim();
+        if (!n) { toast('Type your club name'); return; }
+        select({ k: 'custom', name: n, tier: +body.querySelector('.ct').value, c1: '#6d28d9', c2: '#06b6d4', league: 'My club' });
+      });
+
+      /* difficulty */
+      diffsEl.innerHTML = [1, 2, 3].map(function (i) {
+        return '<button class="dbtn' + (i === diff ? ' on' : '') + '" data-d="' + i + '"><span class="ic">' + DIFF[i].ic + '</span><div><b>' + DIFF[i].name + '</b><span>' + DIFF[i].desc + '</span></div></button>';
+      }).join('');
+      diffsEl.addEventListener('click', function (e) {
+        var b = e.target.closest('.dbtn'); if (!b) return;
+        diff = +b.dataset.d; diffsEl.querySelectorAll('.dbtn').forEach(function (x) { x.classList.toggle('on', x === b); });
+      });
+
+      /* challenge */
+      function score() { return 100 * DIFF[diff].mult + (cur.team.tier === 1 ? 100 : cur.team.tier === 2 ? 50 : 0); }
+      function rank(s) { var r = RANKS[0][1]; RANKS.forEach(function (x) { if (s >= x[0]) r = x[1]; }); return r; }
+      function rand(slot) {
+        var d = DIFF[cur.diff];
+        if (slot === 'goal') return fill(pick(pool.goal[cur.team.tier]), d);
+        if (slot === 'twist') return fill(pick(pool.twist), d);
+        return fill(pick(pool.rule), d);
+      }
+      function roll(slotEl, slot, ms) {
+        var t = slotEl.querySelector('.t'), t0 = Date.now();
+        t.classList.add('rolling');
+        var iv = setInterval(function () {
+          if (Date.now() - t0 >= ms) { clearInterval(iv); t.classList.remove('rolling'); t.textContent = cur[slot]; }
+          else t.textContent = rand(slot);
+        }, 70);
+      }
+      function generate() {
+        if (!sel) { toast('Pick a club first'); var p = body.querySelector('.picker'); p.classList.remove('shake'); void p.offsetWidth; p.classList.add('shake'); p.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+        cur = { team: sel, diff: diff };
+        var r1 = rand('rule1'), r2; do { r2 = rand('rule2'); } while (r2 === r1);
+        cur.goal = rand('goal'); cur.rule1 = r1; cur.rule2 = r2; cur.twist = rand('twist');
+        var d = DIFF[diff], s = score();
+        var rows = [['goal', 'Goal', ''], ['rule1', 'Rule', 'rule'], ['rule2', 'Rule', 'rule'], ['twist', 'Twist', 'twist']];
+        var h = '<div class="ch-top"><div class="ch-id">' + crest(sel) + '<div><div class="ch-team">' + esc(sel.name) + '</div><div class="ch-meta">' + esc(sel.league) + ' · ' + TIERN[sel.tier] + ' · ' + d.name + ' · ' + d.n + ' seasons</div></div></div>' +
+                '<div class="score"><b>' + s + '</b><span>' + rank(s) + ' challenge</span></div></div>';
+        rows.forEach(function (r) {
+          h += '<div class="slot" data-slot="' + r[0] + '"><span class="k ' + r[2] + '">' + r[1] + '</span><div class="t"></div><button class="rr" aria-label="Reroll this line" title="Reroll this line">&#8635;</button></div>';
+        });
+        h += '<div class="actions"><button class="btn btn-primary btn-sm" data-a="accept">Accept Challenge</button><button class="btn btn-ghost btn-sm" data-a="again">Reroll All</button>' +
+             '<button class="btn btn-ghost btn-sm" data-a="copy">Copy</button><button class="btn btn-ghost btn-sm" data-a="wa">Share</button></div>' +
+             '<div class="note">Tap &#8635; to reroll one line. Play it fair and share your result with the community!</div>';
+        res.className = 'result on'; res.innerHTML = h;
+        res.querySelectorAll('.slot').forEach(function (el, i) { roll(el, el.dataset.slot, 600 + i * 350); });
+        if (window.innerWidth < 860) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function asText() {
+        var d = DIFF[cur.diff];
+        return (mode === 'fcm' ? 'FCM 26' : 'FTM 27') + ' Challenge - ' + cur.team.name + ' (' + d.name + ')\nGoal: ' + cur.goal + '\nRule: ' + cur.rule1 + '\nRule: ' + cur.rule2 + '\nTwist: ' + cur.twist + '\nGet yours at LKS SASKE';
+      }
+      body.querySelector('.gen').addEventListener('click', generate);
+      res.addEventListener('click', function (e) {
+        var rr = e.target.closest('.rr'), a = e.target.closest('[data-a]');
+        if (rr && cur) {
+          var slotEl = rr.closest('.slot'), key = slotEl.dataset.slot, other = key === 'rule1' ? 'rule2' : 'rule1', t, n = 0;
+          do { t = rand(key); n++; } while (key !== 'goal' && key !== 'twist' && t === cur[other] && n < 20);
+          cur[key] = t; roll(slotEl, key, 500); return;
+        }
+        if (!a || !cur) return;
+        var act = a.dataset.a;
+        if (act === 'again') generate();
+        else if (act === 'copy') {
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(asText()).then(function () { toast('Copied!'); }, function () { toast('Copy failed'); });
+          else toast('Copy not supported here');
+        } else if (act === 'wa') window.open('https://wa.me/?text=' + encodeURIComponent(asText()), '_blank', 'noopener');
+        else if (act === 'accept') {
+          var list = store(KEY);
+          list.unshift({ team: cur.team.name, goal: cur.goal, diff: DIFF[cur.diff].name, score: 100 * DIFF[cur.diff].mult + (cur.team.tier === 1 ? 100 : cur.team.tier === 2 ? 50 : 0), done: false });
+          store(KEY, list.slice(0, 15)); renderHist(); toast('Challenge accepted!');
+        }
+      });
+
+      /* history */
+      function renderHist() {
+        var list = store(KEY);
+        if (!list.length) { histEl.innerHTML = '<div class="hist-empty">Nothing accepted yet. Accept a challenge to track it here.</div>'; return; }
+        histEl.innerHTML = list.map(function (c, i) {
+          return '<div class="hi' + (c.done ? ' done' : '') + '"><div class="info"><b>' + esc(c.team) + ' · ' + esc(c.goal) + '</b><small>' + esc(c.diff) + ' · ' + c.score + ' pts</small></div>' +
+                 '<button class="ok" data-i="' + i + '" data-h="done">' + (c.done ? 'Completed' : 'Mark done') + '</button><button data-i="' + i + '" data-h="del" aria-label="Remove">&times;</button></div>';
+        }).join('');
+      }
+      histEl.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b) return;
+        var list = store(KEY), i = +b.dataset.i;
+        if (b.dataset.h === 'done') list[i].done = !list[i].done; else if (b.dataset.h === 'del') list.splice(i, 1);
+        store(KEY, list); renderHist();
+      });
+      document.getElementById('clr-' + mode).addEventListener('click', function () { store(KEY, []); renderHist(); });
+
+      renderTabs(); renderTeams(); renderSel(); renderHist();
+    }
+    build('fcm'); build('ftm');
+  })();
+  </script>
+</body>
+</html>
